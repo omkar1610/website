@@ -90,12 +90,44 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            className="md:hidden p-2 flex flex-col gap-1"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
+          {/* Mobile: Language Toggle + Hamburger */}
+          <div className="md:hidden flex items-center gap-2">
+            <div
+              className={`flex items-center text-xs font-semibold rounded-full border overflow-hidden ${
+                isScrolled ? 'border-gray-300' : 'border-white/40'
+              }`}
+            >
+              <button
+                onClick={() => setLang('en')}
+                className={`px-2.5 py-1 transition-colors ${
+                  lang === 'en'
+                    ? 'bg-gold text-white'
+                    : isScrolled
+                    ? 'text-gray-500 hover:text-gold'
+                    : 'text-white/70 hover:text-white'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLang('or')}
+                className={`px-2.5 py-1 transition-colors ${
+                  lang === 'or'
+                    ? 'bg-gold text-white'
+                    : isScrolled
+                    ? 'text-gray-500 hover:text-gold'
+                    : 'text-white/70 hover:text-white'
+                }`}
+              >
+                ଓଡ଼ିଆ
+              </button>
+            </div>
+
+            <button
+              className="p-2 flex flex-col gap-1"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
             <span
               className={`block w-5 h-0.5 transition-all ${
                 isScrolled ? 'bg-navy' : 'bg-white'
@@ -112,7 +144,8 @@ export default function Navbar() {
               }`}
             />
           </button>
-        </div>
+          </div>{/* end md:hidden wrapper */}
+        </div>{/* end justify-between row */}
 
         {/* Mobile Menu */}
         {isMenuOpen && (
@@ -127,27 +160,6 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-
-            {/* Mobile Language Toggle */}
-            <div className="flex items-center gap-2 px-4 py-3 border-t border-divider mt-1">
-              <span className="text-xs text-gray-400 font-medium">Language:</span>
-              <button
-                onClick={() => setLang('en')}
-                className={`text-xs font-semibold px-3 py-1 rounded-full transition-colors ${
-                  lang === 'en' ? 'bg-gold text-white' : 'text-gray-500 hover:text-gold'
-                }`}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => setLang('or')}
-                className={`text-xs font-semibold px-3 py-1 rounded-full transition-colors ${
-                  lang === 'or' ? 'bg-gold text-white' : 'text-gray-500 hover:text-gold'
-                }`}
-              >
-                ଓଡ଼ିଆ
-              </button>
-            </div>
           </div>
         )}
       </div>
