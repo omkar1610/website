@@ -1,6 +1,12 @@
-import Image from 'next/image';
+'use client'
+
+import Image from 'next/image'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Hero() {
+  const { t } = useLanguage()
+  const h = t.hero
+
   return (
     <section
       id="top"
@@ -19,26 +25,21 @@ export default function Hero() {
           <div className="text-white order-2 lg:order-1">
             <div className="mb-5">
               <span className="inline-block bg-gold/20 text-gold border border-gold/30 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-widest">
-                Official Website
+                {h.badge}
               </span>
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
-              Suryabanshi
+              {h.nameFirst}
               <br />
-              <span className="text-gold">Suraj</span>
+              <span className="text-gold">{h.nameLast}</span>
             </h1>
             <div className="space-y-1 mb-6">
-              <p className="text-white/90 text-lg font-medium">
-                MLA, Dhamnagar Constituency
-              </p>
-              <p className="text-white/60 text-base">
-                Minister, Government of Odisha
-              </p>
+              <p className="text-white/90 text-lg font-medium">{h.role}</p>
+              <p className="text-white/60 text-base">{h.ministry}</p>
             </div>
             <blockquote className="border-l-4 border-gold pl-4 mb-8">
               <p className="text-white/75 text-base italic leading-relaxed">
-                &ldquo;Committed to transparent governance, inclusive
-                development, and empowering every citizen of Dhamnagar.&rdquo;
+                &ldquo;{h.quote}&rdquo;
               </p>
             </blockquote>
             <div className="flex flex-wrap gap-4">
@@ -46,13 +47,13 @@ export default function Hero() {
                 href="#about"
                 className="bg-gold hover:bg-gold-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
               >
-                About Me
+                {h.ctaAbout}
               </a>
               <a
                 href="#constituency"
                 className="border border-white/40 hover:border-white text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm hover:bg-white/10"
               >
-                Constituency Work
+                {h.ctaConstituency}
               </a>
             </div>
           </div>
@@ -61,7 +62,7 @@ export default function Hero() {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative">
               <div className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-[22rem] lg:h-[28rem] rounded-2xl overflow-hidden shadow-xl">
-                <Image src="/profile.jpg" alt="Suryabanshi Suraj" fill className="object-cover"/>
+                <Image src="/profile.jpg" alt={`${h.nameFirst} ${h.nameLast}`} fill className="object-cover" />
               </div>
               <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-gold/15 -z-10" />
             </div>
@@ -72,18 +73,8 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <a href="#about" aria-label="Scroll down">
-          <svg
-            className="w-6 h-6 text-white/40"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
+          <svg className="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </a>
       </div>

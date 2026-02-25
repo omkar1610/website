@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Lora } from 'next/font/google'
+import { LanguageProvider } from '@/context/LanguageContext'
 import './globals.css'
 
 const inter = Inter({
@@ -103,7 +104,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   )
 }

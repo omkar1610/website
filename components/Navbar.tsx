@@ -1,18 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-
-const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Development', href: '#constituency' },
-  { label: 'News & Media', href: '#news' },
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'Contact', href: '#contact' },
-]
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { lang, setLang, t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +15,14 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const navLinks = [
+    { label: t.nav.links.about, href: '#about' },
+    { label: t.nav.links.development, href: '#constituency' },
+    { label: t.nav.links.news, href: '#news' },
+    { label: t.nav.links.gallery, href: '#gallery' },
+    { label: t.nav.links.contact, href: '#contact' },
+  ]
 
   return (
     <nav
@@ -36,9 +38,9 @@ export default function Navbar() {
                 isScrolled ? 'text-navy' : 'text-white'
               }`}
             >
-              Suryabanshi Suraj
+              {t.nav.name}
             </span>
-            <span className="text-xs font-medium text-gold">MLA, Dhamnagar</span>
+            <span className="text-xs font-medium text-gold">{t.nav.title}</span>
           </a>
 
           {/* Desktop Nav */}
@@ -54,6 +56,38 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+
+            {/* Language Toggle */}
+            <div
+              className={`flex items-center text-xs font-semibold rounded-full border overflow-hidden ${
+                isScrolled ? 'border-gray-300' : 'border-white/40'
+              }`}
+            >
+              <button
+                onClick={() => setLang('en')}
+                className={`px-3 py-1 transition-colors ${
+                  lang === 'en'
+                    ? 'bg-gold text-white'
+                    : isScrolled
+                    ? 'text-gray-500 hover:text-gold'
+                    : 'text-white/70 hover:text-white'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLang('or')}
+                className={`px-3 py-1 transition-colors ${
+                  lang === 'or'
+                    ? 'bg-gold text-white'
+                    : isScrolled
+                    ? 'text-gray-500 hover:text-gold'
+                    : 'text-white/70 hover:text-white'
+                }`}
+              >
+                ଓଡ଼ିଆ
+              </button>
+            </div>
           </div>
 
           {/* Mobile Hamburger */}
@@ -93,6 +127,27 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+
+            {/* Mobile Language Toggle */}
+            <div className="flex items-center gap-2 px-4 py-3 border-t border-divider mt-1">
+              <span className="text-xs text-gray-400 font-medium">Language:</span>
+              <button
+                onClick={() => setLang('en')}
+                className={`text-xs font-semibold px-3 py-1 rounded-full transition-colors ${
+                  lang === 'en' ? 'bg-gold text-white' : 'text-gray-500 hover:text-gold'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLang('or')}
+                className={`text-xs font-semibold px-3 py-1 rounded-full transition-colors ${
+                  lang === 'or' ? 'bg-gold text-white' : 'text-gray-500 hover:text-gold'
+                }`}
+              >
+                ଓଡ଼ିଆ
+              </button>
+            </div>
           </div>
         )}
       </div>

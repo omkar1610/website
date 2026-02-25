@@ -1,15 +1,15 @@
-const quickLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Constituency & Development', href: '#constituency' },
-  { label: 'News & Media', href: '#news' },
-  { label: 'Gallery', href: '#gallery' },
-]
+'use client'
 
-const officialLinks = [
-  { label: 'Government of Odisha', href: 'https://odisha.gov.in' },
-  { label: 'Odisha Legislative Assembly', href: 'https://odishaassembly.nic.in' },
-  { label: 'Ministry of Finance, Odisha', href: 'https://finance.odisha.gov.in' },
-  { label: 'National Portal of India', href: 'https://india.gov.in' },
+import { useLanguage } from '@/context/LanguageContext'
+
+// hrefs stay here — only labels come from translations
+const quickLinkHrefs = ['#about', '#constituency', '#news', '#gallery']
+
+const officialLinkHrefs = [
+  'https://odisha.gov.in',
+  'https://odishaassembly.nic.in',
+  'https://finance.odisha.gov.in',
+  'https://india.gov.in',
 ]
 
 const socialLinks = [
@@ -52,6 +52,8 @@ const socialLinks = [
 ]
 
 export default function Footer() {
+  const { t } = useLanguage()
+  const f = t.footer
   const currentYear = new Date().getFullYear()
 
   return (
@@ -60,17 +62,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand column */}
           <div className="md:col-span-2">
-            <h3 className="font-serif text-2xl font-bold mb-1">
-              Suryabanshi Suraj
-            </h3>
-            <p className="text-gold text-sm mb-4">
-              MLA, Dhamnagar Constituency &nbsp;·&nbsp; Minister, Govt. of
-              Odisha
-            </p>
-            <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">
-              Official portal for constituency information, government schemes,
-              development updates, and citizen engagement.
-            </p>
+            <h3 className="font-serif text-2xl font-bold mb-1">{f.brandName}</h3>
+            <p className="text-gold text-sm mb-4">{f.brandSubtitle}</p>
+            <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">{f.brandDesc}</p>
             <div className="flex gap-2">
               {socialLinks.map((s) => (
                 <a
@@ -90,16 +84,16 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">
-              Quick Links
+              {f.quickLinksTitle}
             </h4>
             <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
+              {f.quickLinks.map((label, i) => (
+                <li key={i}>
                   <a
-                    href={link.href}
+                    href={quickLinkHrefs[i]}
                     className="text-white/60 hover:text-gold text-sm transition-colors"
                   >
-                    {link.label}
+                    {label}
                   </a>
                 </li>
               ))}
@@ -109,18 +103,18 @@ export default function Footer() {
           {/* Official Resources */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">
-              Official Resources
+              {f.officialLinksTitle}
             </h4>
             <ul className="space-y-2">
-              {officialLinks.map((link) => (
-                <li key={link.label}>
+              {f.officialLinks.map((label, i) => (
+                <li key={i}>
                   <a
-                    href={link.href}
+                    href={officialLinkHrefs[i]}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/60 hover:text-gold text-sm transition-colors"
                   >
-                    {link.label}
+                    {label}
                   </a>
                 </li>
               ))}
@@ -129,18 +123,16 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between gap-4 text-xs text-white/35">
-          <p>© {currentYear} Suryabanshi Suraj. All rights reserved.</p>
+          <p>© {currentYear} {f.brandName}. {f.allRightsReserved}</p>
           <p className="max-w-lg md:text-right leading-relaxed">
-            This is the official website of Suryabanshi Suraj, MLA Dhamnagar.
-            Content is maintained by the office of the MLA. For government
-            schemes, visit{' '}
+            {f.disclaimer}{' '}
             <a
               href="https://odisha.gov.in"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-white/60 transition-colors"
             >
-              odisha.gov.in
+              {f.disclaimerLinkLabel}
             </a>
             .
           </p>
