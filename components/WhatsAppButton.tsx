@@ -1,7 +1,7 @@
 'use client'
 
 export default function WhatsAppButton() {
-  const phoneNumber = '919XXXXXXXXX' // Replace with actual number
+  const phoneNumber = '918895100753'
   const message = encodeURIComponent(
     'Hello, I would like to connect with the office of MLA Suryabanshi Suraj.'
   )
