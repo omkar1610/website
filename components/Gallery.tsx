@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const galleryImages = [
+const galleryItems = [
   { src: '/gallery/1.jpg', label: 'Public Address at Community Event', cols: 2, rows: 2 },
 
   { src: '/gallery/2.jpg', label: 'Interaction with Youth Football Team', cols: 1, rows: 1 },
@@ -15,8 +15,7 @@ const galleryImages = [
   { src: '/gallery/8.jpg', label: 'Interaction with Young Student', cols: 1, rows: 1 },
 
   { src: '/gallery/9.jpg', label: 'Lamp Lighting Ceremony at Cultural Program', cols: 2, rows: 1 },
-];
-
+]
 
 export default function Gallery() {
   return (
