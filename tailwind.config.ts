@@ -9,6 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // tailwind.config.ts — just swap these hex values
+        // navy: {
+        //   DEFAULT: '#D9822B',   // Muted saffron
+        //   dark: '#A65C1A',      // Deep saffron-brown
+        //   light: '#E6A65C',     // Soft saffron highlight
+        // },
+        // gold: {
+        //   DEFAULT: '#2E5E2C',   // Deep BJP-style green
+        //   dark: '#1F3F1E',      // Forest green
+        //   light: '#4C8C4A',     // Muted green accent
+        // },
+        // cream: '#F6F1E6',       // Warm off-white (less bright than pure white)
+        // divider: '#D9CBB8',     // Soft earthy divider
+
+
         navy: {
           DEFAULT: '#1B3A6B',
           dark: '#0f2040',
