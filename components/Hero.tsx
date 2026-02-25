@@ -62,7 +62,7 @@ export default function Hero() {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative">
               <div className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-[22rem] lg:h-[28rem] rounded-2xl overflow-hidden shadow-xl">
-                <Image src="/profile.jpg" alt={`${h.nameFirst} ${h.nameLast}`} fill className="object-cover" />
+                <Image src="/profile.jpg" alt={`${h.nameFirst} ${h.nameLast}`} fill sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 352px" className="object-cover" />
               </div>
               <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 border-gold/15 -z-10" />
             </div>
