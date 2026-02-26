@@ -92,10 +92,10 @@ const en = {
     sectionSubtitle:
       'Dhamnagar — a region of immense potential, steadily transformed through targeted governance and sustained public investment.',
     stats: [
-      { number: '୧୦+', label: 'Years of Service' },
-      { number: '୨୦୦+', label: 'Development Projects' },
-      { number: '୫୦+', label: 'Villages Covered' },
-      { number: '₹୫୦୦Cr+', label: 'Funds Mobilized' },
+      { number: '10+', label: 'Years of Service' },
+      { number: '200+', label: 'Development Projects' },
+      { number: '50+', label: 'Villages Covered' },
+      { number: '₹500Cr+', label: 'Funds Mobilized' },
 
     ],
     initiatives: [
@@ -312,10 +312,10 @@ const or: typeof en = {
     sectionSubtitle:
       'ଧାମନଗର — ବିଶାଳ ସମ୍ଭାବନାର ଏକ ଅଞ୍ଚଳ, ଯାହା ଲକ୍ଷ୍ୟଭିତ୍ତିକ ଶାସନ ଓ ସ୍ଥାୟୀ ପୁଞ୍ଜିନିବେଶ ଦ୍ୱାରା ପରିବର୍ତ୍ତିତ ହେଉଛି।',
     stats: [
-      { number: '10+', label: 'ବର୍ଷର ସେବା' },
-      { number: '200+', label: 'ଉନ୍ନୟନ ପ୍ରକଳ୍ପ' },
-      { number: '50+', label: 'ଆବର୍ତ୍ତ ଗ୍ରାମ' },
-      { number: '₹500Cr+', label: 'ସଂଗୃହୀତ ଧନରାଶି' },
+      { number: '୧୦+', label: 'ବର୍ଷର ସେବା' },
+      { number: '୨୦୦+', label: 'ଉନ୍ନୟନ ପ୍ରକଳ୍ପ' },
+      { number: '୫୦+', label: 'ଆବର୍ତ୍ତ ଗ୍ରାମ' },
+      { number: '₹୫୦୦କୋଟି+', label: 'ସଂଗୃହୀତ ଧନରାଶି' },
     ],
     initiatives: [
       {
