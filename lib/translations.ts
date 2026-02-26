@@ -290,19 +290,33 @@ const content = {
 // value for the requested language.  Plain strings/numbers pass through as-is.
 // To add a new language: add it to Lang + LANGS, then fill every leaf above.
 
-function derive(lang: Lang, node: unknown): unknown {
-  if (Array.isArray(node)) return node.map((item) => derive(lang, item))
+type LangLeafValue<T> = T extends Record<Lang, infer V>
+  ? Exclude<keyof T, Lang> extends never
+    ? V
+    : never
+  : never
+
+type DerivedTranslations<T> = T extends readonly (infer U)[]
+  ? DerivedTranslations<U>[]
+  : [LangLeafValue<T>] extends [never]
+    ? T extends object
+      ? { [K in keyof T]: DerivedTranslations<T[K]> }
+      : T
+    : LangLeafValue<T>
+
+function derive<T>(lang: Lang, node: T): DerivedTranslations<T> {
+  if (Array.isArray(node)) return node.map((item) => derive(lang, item)) as DerivedTranslations<T>
   if (node !== null && typeof node === 'object') {
     const keys = Object.keys(node as object)
     if (keys.length > 0 && keys.every((k) => LANGS.includes(k as Lang))) {
       // This is a translation leaf — return the requested language's value
-      return (node as Record<Lang, unknown>)[lang]
+      return (node as Record<Lang, unknown>)[lang] as DerivedTranslations<T>
     }
     return Object.fromEntries(
       Object.entries(node as object).map(([k, v]) => [k, derive(lang, v)])
-    )
+    ) as DerivedTranslations<T>
   }
-  return node
+  return node as DerivedTranslations<T>
 }
 
 // ─── EXPORTS ─────────────────────────────────────────────────────────────────
