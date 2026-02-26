@@ -36,7 +36,7 @@ const en = {
     bioPara2:
       'As Member of Legislative Assembly (MLA) from Dhamnagar and Minister in the Government of Odisha, he has worked tirelessly to bridge the gap between government initiatives and ground-level implementation, ensuring that the benefits of development reach every household in the constituency.',
     bioPara3:
-      'His tenure has been marked by a sustained focus on improving education infrastructure, healthcare access, road connectivity, and agricultural support — critical pillars for the progress of rural Odisha.',
+      'His tenure has been marked by a sustained focus on improving education infrastructure, healthcare access, road connectivity, and agricultural support - critical pillars for the progress of rural Odisha.',
     badge1: 'MLA, Dhamnagar',
     badge2: 'Cabinet Minister',
     badge3: 'Government of Odisha',
@@ -90,7 +90,7 @@ const en = {
   constituency: {
     sectionTitle: 'Constituency & Development',
     sectionSubtitle:
-      'Dhamnagar — a region of immense potential, steadily transformed through targeted governance and sustained public investment.',
+      'Dhamnagar - a region of immense potential, steadily transformed through targeted governance and sustained public investment.',
     stats: [
       { number: '10+', label: 'Years of Service' },
       { number: '200+', label: 'Development Projects' },
@@ -138,7 +138,7 @@ const en = {
     ],
     ctaTitle: 'Dhamnagar: A Region on the Rise',
     ctaDesc:
-      'Through sustained investment and community-driven programs, Dhamnagar is emerging as a model constituency in Odisha — with improved quality of life, better connectivity, and empowered communities.',
+      'Through sustained investment and community-driven programs, Dhamnagar is emerging as a model constituency in Odisha - with improved quality of life, better connectivity, and empowered communities.',
     ctaButton: 'Connect with Our Office',
   },
 
@@ -220,7 +220,7 @@ const en = {
 }
 
 // ─── ODIA ────────────────────────────────────────────────────────────────────
-// All values below are placeholders — replace each one with actual Odia text.
+// All values below are placeholders - replace each one with actual Odia text.
 const or: typeof en = {
   nav: {
     name: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍',
@@ -256,7 +256,7 @@ const or: typeof en = {
     bioPara2:
       'ଧାମନଗରର ବିଧାୟକ ଓ ଓଡ଼ିଶା ସରକାରର ମନ୍ତ୍ରୀ ଭାବେ ସେ ସରକାରୀ ଯୋଜନା ଓ ଭୂମିସ୍ତରର କାର୍ଯ୍ୟନ୍ୱୟନ ମଧ୍ୟର ଦୂରତା କମାଇବାରେ ଅବିରତ ପ୍ରୟାସ କରିଛନ୍ତି, ଯାହା ଫଳରେ ଉନ୍ନୟନର ଲାଭ ପ୍ରତ୍ୟେକ ଘରକୁ ପହଞ୍ଚି ପାରିଛି।',
     bioPara3:
-      'ତାଙ୍କ କାର୍ଯ୍ୟକାଳ ଶିକ୍ଷା ପ୍ରାଣାଳୀ, ସ୍ୱାସ୍ଥ୍ୟ ସେବା, ସଡ଼କ ସଂଯୋଗ ଓ କୃଷି ସହାୟତା ଉନ୍ନତିରେ କେନ୍ଦ୍ରିତ ରହିଛି — ଯାହା ଗ୍ରାମୀଣ ଓଡ଼ିଶାର ଉନ୍ନତିର ମୂଳ ଭିତ୍ତି।',
+      'ତାଙ୍କ କାର୍ଯ୍ୟକାଳ ଶିକ୍ଷା ପ୍ରାଣାଳୀ, ସ୍ୱାସ୍ଥ୍ୟ ସେବା, ସଡ଼କ ସଂଯୋଗ ଓ କୃଷି ସହାୟତା ଉନ୍ନତିରେ କେନ୍ଦ୍ରିତ ରହିଛି - ଯାହା ଗ୍ରାମୀଣ ଓଡ଼ିଶାର ଉନ୍ନତିର ମୂଳ ଭିତ୍ତି।',
     badge1: 'ବିଧାୟକ, ଧାମନଗର',
     badge2: 'ମନ୍ତ୍ରୀମଣ୍ଡଳ ସଦସ୍ୟ',
     badge3: 'ଓଡ଼ିଶା ସରକାର',
@@ -310,7 +310,7 @@ const or: typeof en = {
   constituency: {
     sectionTitle: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଓ ଉନ୍ନୟନ',
     sectionSubtitle:
-      'ଧାମନଗର — ବିଶାଳ ସମ୍ଭାବନାର ଏକ ଅଞ୍ଚଳ, ଯାହା ଲକ୍ଷ୍ୟଭିତ୍ତିକ ଶାସନ ଓ ସ୍ଥାୟୀ ପୁଞ୍ଜିନିବେଶ ଦ୍ୱାରା ପରିବର୍ତ୍ତିତ ହେଉଛି।',
+      'ଧାମନଗର - ବିଶାଳ ସମ୍ଭାବନାର ଏକ ଅଞ୍ଚଳ, ଯାହା ଲକ୍ଷ୍ୟଭିତ୍ତିକ ଶାସନ ଓ ସ୍ଥାୟୀ ପୁଞ୍ଜିନିବେଶ ଦ୍ୱାରା ପରିବର୍ତ୍ତିତ ହେଉଛି।',
     stats: [
       { number: '୧୦+', label: 'ବର୍ଷର ସେବା' },
       { number: '୨୦୦+', label: 'ଉନ୍ନୟନ ପ୍ରକଳ୍ପ' },

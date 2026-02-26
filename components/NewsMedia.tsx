@@ -55,7 +55,7 @@ export default function NewsMedia() {
           </div>
 
           {/* Twitter, Instagram, YouTube
-              mobile : 3-column row (compact — no description text)
+              mobile : 3-column row (compact - no description text)
               desktop: stacked column (full tiles with description)             */}
           <div className="grid grid-cols-3 gap-2 md:flex md:flex-col md:gap-3 md:min-h-[520px]">
 

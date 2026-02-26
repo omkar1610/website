@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // tailwind.config.ts — just swap these hex values
+        // tailwind.config.ts - just swap these hex values
         // navy: {
         //   DEFAULT: '#D9822B',   // Muted saffron
         //   dark: '#A65C1A',      // Deep saffron-brown

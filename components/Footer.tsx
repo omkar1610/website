@@ -2,7 +2,7 @@
 
 import { useLanguage } from '@/context/LanguageContext'
 
-// hrefs stay here — only labels come from translations
+// hrefs stay here - only labels come from translations
 const quickLinkHrefs = ['#about', '#constituency', '#news', '#gallery']
 
 const officialLinkHrefs = [
