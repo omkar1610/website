@@ -10,38 +10,53 @@ const LANGS: Lang[] = ['en', 'or']
 
 const content = {
   nav: {
-    name:  { en: 'Suryabanshi Suraj',                                       or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍' },
-    title: { en: 'MLA, Dhamnagar · Minister, Govt. of Odisha',              or: 'ବିଧାୟକ, ଧାମନଗର · ମନ୍ତ୍ରୀ, ଓଡ଼ିଶା ସରକାର' },
+    name:  { 
+      en: 'Suryabanshi Suraj',
+      or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍' 
+    },
+    title: { 
+      en: 'MLA, Dhamnagar · Minister, Govt. of Odisha',
+      or: 'ବିଧାୟକ, ଧାମନଗର · ମନ୍ତ୍ରୀ, ଓଡ଼ିଶା ସରକାର' 
+    },
     links: {
-      about:       { en: 'About',       or: 'ବିଷୟରେ' },
+      about:       { en: 'About', or: 'ବିଷୟରେ' },
       development: { en: 'Development', or: 'ଉନ୍ନୟନ' },
       news:        { en: 'News & Media', or: 'ଖବର ଓ ମାଧ୍ୟମ' },
-      gallery:     { en: 'Gallery',     or: 'ଗ୍ୟାଲେରୀ' },
-      contact:     { en: 'Contact',     or: 'ଯୋଗାଯୋଗ' },
+      gallery:     { en: 'Gallery', or: 'ଗ୍ୟାଲେରୀ' },
+      contact:     { en: 'Contact', or: 'ଯୋଗାଯୋଗ' },
     },
   },
 
   hero: {
-    badge:           { en: 'Official Website',                        or: 'ଅଧିକୃତ ୱେବସାଇଟ' },
-    nameFirst:       { en: 'Suryabanshi',                             or: 'ସୂର୍ଯ୍ୟବଂଶୀ' },
-    nameLast:        { en: 'Suraj',                                   or: 'ସୂରଜ୍' },
-    role:            { en: 'MLA, Dhamnagar Constituency (Bhadrak)',   or: 'ବିଧାୟକ, ଧାମନଗର ନିର୍ବାଚନ ମଣ୍ଡଳୀ (ଭଦ୍ରକ)' },
+    badge:           { en: 'Official Website', or: 'ଅଧିକୃତ ୱେବସାଇଟ' },
+    nameFirst:       { en: 'Suryabanshi', or: 'ସୂର୍ଯ୍ୟବଂଶୀ' },
+    nameLast:        { en: 'Suraj', or: 'ସୂରଜ୍' },
+    role:            { en: 'MLA, Dhamnagar Constituency (Bhadrak)', or: 'ବିଧାୟକ, ଧାମନଗର ନିର୍ବାଚନ ମଣ୍ଡଳୀ (ଭଦ୍ରକ)' },
     ministry:        {
-      en: 'Minister of State (Independent Charge) – Higher Education, Sports & Youth Services, Odia Language, Literature & Culture',
-      or: 'ସ୍ୱତନ୍ତ୍ର ଦାୟିତ୍ୱପ୍ରାପ୍ତ ରାଜ୍ୟମନ୍ତ୍ରୀ – ଉଚ୍ଚ ଶିକ୍ଷା, କ୍ରୀଡ଼ା ଓ ଯୁବ ସେବା, ଓଡ଼ିଆ ଭାଷା ସାହିତ୍ୟ ଓ ସଂସ୍କୃତି',
+      en: 'Minister of State (Independent Charge) - Higher Education, Sports & Youth Services, Odia Language, Literature & Culture',
+      or: 'ସ୍ୱତନ୍ତ୍ର ଦାୟିତ୍ୱପ୍ରାପ୍ତ ରାଜ୍ୟମନ୍ତ୍ରୀ - ଉଚ୍ଚ ଶିକ୍ଷା, କ୍ରୀଡ଼ା ଓ ଯୁବ ସେବା, ଓଡ଼ିଆ ଭାଷା ସାହିତ୍ୟ ଓ ସଂସ୍କୃତି',
     },
     quote: {
       en: 'Empowering youth, preserving heritage, and building a future-ready Odisha through transparent and accountable governance.',
       or: 'ଯୁବ ସଶକ୍ତିକରଣ, ଐତିହ୍ୟ ସୁରକ୍ଷା ଓ ଆଧୁନିକ ଓଡ଼ିଶା ଗଢ଼ିବା ପାଇଁ ପାରଦର୍ଶୀ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ପ୍ରତି ପ୍ରତିବଦ୍ଧ।',
     },
-    ctaAbout:        { en: 'About Me',           or: 'ମୋ ବିଷୟରେ' },
-    ctaConstituency: { en: 'Constituency Work',  or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ କାର୍ଯ୍ୟ' },
+    ctaAbout:        { en: 'About Me', or: 'ମୋ ବିଷୟରେ' },
+    ctaConstituency: { en: 'Constituency Work', or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ କାର୍ଯ୍ୟ' },
   },
 
   about: {
-    sectionTitle:    { en: 'About',                                                                     or: 'ବିଷୟରେ' },
-    sectionSubtitle: { en: "A young leader driven by purpose, progress, and pride in Odisha's heritage.", or: 'ଯୁବ ନେତୃତ୍ୱ, ଦୃଢ଼ ମୂଲ୍ୟବୋଧ ଓ ଓଡ଼ିଆ ସଂସ୍କୃତି ପ୍ରତି ଗର୍ବ।' },
-    bioName:         { en: 'Suryabanshi Suraj',                                                          or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍' },
+    sectionTitle:    { 
+      en: 'About',                                                                     
+      or: 'ବିଷୟରେ' 
+    },
+    sectionSubtitle: { 
+      en: "A young leader driven by purpose, progress, and pride in Odisha's heritage.", 
+      or: 'ଯୁବ ନେତୃତ୍ୱ, ଦୃଢ଼ ମୂଲ୍ୟବୋଧ ଓ ଓଡ଼ିଆ ସଂସ୍କୃତି ପ୍ରତି ଗର୍ବ।' 
+    },
+    bioName:         { 
+      en: 'Suryabanshi Suraj',                                                          
+      or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍' 
+    },
     bioPara1: {
       en: 'Suryabanshi Suraj is a dedicated public servant and one of the youngest members of the Odisha Cabinet. Representing Dhamnagar Constituency in Bhadrak district, he combines grassroots political engagement with a modern, technology-driven approach to governance.',
       or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍ ଧାମନଗର ନିର୍ବାଚନ ମଣ୍ଡଳୀର ବିଧାୟକ ଓ ଓଡ଼ିଶା ମନ୍ତ୍ରିମଣ୍ଡଳର ସବୁଠୁ ଯୁବ ସଦସ୍ୟମାନଙ୍କ ମଧ୍ୟରୁ ଗୋଟିଏ। ସେ ଘାସମୂଳ ସ୍ତରର ଲୋକସମ୍ପର୍କ ଓ ଆଧୁନିକ ପ୍ରଶାସନିକ ଦୃଷ୍ଟିକୋଣକୁ ଏକତ୍ର କରି ଶାସନକୁ ନୂତନ ଦିଗ ଦେଉଛନ୍ତି।',
@@ -115,8 +130,8 @@ const content = {
   constituency: {
     sectionTitle:    { en: 'Constituency & Development',         or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଓ ଉନ୍ନୟନ' },
     sectionSubtitle: {
-      en: 'Dhamnagar – advancing through infrastructure growth, social investment, and community-driven governance.',
-      or: 'ଧାମନଗର – ଆଧାରଭୂତ ପ୍ରାଣାଳୀ, ସାମାଜିକ ନିବେଶ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ମାଧ୍ୟମରେ ଅଗ୍ରଗତିଶୀଳ ଅଞ୍ଚଳ।',
+      en: 'Dhamnagar - advancing through infrastructure growth, social investment, and community-driven governance.',
+      or: 'ଧାମନଗର - ଆଧାରଭୂତ ପ୍ରାଣାଳୀ, ସାମାଜିକ ନିବେଶ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ମାଧ୍ୟମରେ ଅଗ୍ରଗତିଶୀଳ ଅଞ୍ଚଳ।',
     },
     stats: [
       { number: { en: '4+',       or: '୪+' },         label: { en: 'Years as MLA',        or: 'ବର୍ଷର ସେବା' } },
@@ -128,37 +143,63 @@ const content = {
       {
         tag:         { en: 'Higher Education',             or: 'ଉଚ୍ଚ ଶିକ୍ଷା' },
         title:       { en: 'University & College Modernization', or: 'ମହାବିଦ୍ୟାଳୟ ଓ ବିଶ୍ୱବିଦ୍ୟାଳୟ ଉନ୍ନତି' },
-        description: { en: 'Strengthening higher education institutions, promoting research culture, and enabling digital infrastructure.', or: 'ଡିଜିଟାଲ ଢାଞ୍ଚା, ଗବେଷଣା ପ୍ରୋତ୍ସାହନ ଓ ଶିକ୍ଷା ଗୁଣବତ୍ତା ବୃଦ୍ଧି।' },
+        description: { 
+          en: 'Strengthening higher education institutions, promoting research culture, and enabling digital infrastructure.', 
+          or: 'ଡିଜିଟାଲ ଢାଞ୍ଚା, ଗବେଷଣା ପ୍ରୋତ୍ସାହନ ଓ ଶିକ୍ଷା ଗୁଣବତ୍ତା ବୃଦ୍ଧି।' 
+        },
       },
       {
         tag:         { en: 'Sports',                       or: 'କ୍ରୀଡ଼ା' },
         title:       { en: 'Youth & Sports Infrastructure', or: 'କ୍ରୀଡ଼ା ପ୍ରାଣାଳୀ ଓ ଯୁବ ସେବା' },
-        description: { en: 'Developing stadiums, training centres, and grassroots talent programs across the constituency.', or: 'ଷ୍ଟେଡିୟମ୍, ପ୍ରଶିକ୍ଷଣ କେନ୍ଦ୍ର ଓ ଘାସମୂଳ ସ୍ତରର କ୍ରୀଡ଼ା ପ୍ରତିଭା ପ୍ରୋତ୍ସାହନ।' },
+        description: { 
+          en: 'Developing stadiums, training centres, and grassroots talent programs across the constituency.', 
+          or: 'ଷ୍ଟେଡିୟମ୍, ପ୍ରଶିକ୍ଷଣ କେନ୍ଦ୍ର ଓ ଘାସମୂଳ ସ୍ତରର କ୍ରୀଡ଼ା ପ୍ରତିଭା ପ୍ରୋତ୍ସାହନ।' 
+        },
       },
       {
         tag:         { en: 'Culture',                      or: 'ସଂସ୍କୃତି' },
         title:       { en: 'Odia Language & Heritage Promotion', or: 'ଓଡ଼ିଆ ଭାଷା ଓ ସାହିତ୍ୟ ପ୍ରଚାର' },
-        description: { en: 'Digitization of Odia literature, support to artists, and global cultural outreach initiatives.', or: 'ଓଡ଼ିଆ ସାହିତ୍ୟର ଡିଜିଟାଲିକରଣ ଓ ସାଂସ୍କୃତିକ ପ୍ରଚାର।' },
+        description: { 
+          en: 'Digitization of Odia literature, support to artists, and global cultural outreach initiatives.', 
+          or: 'ଓଡ଼ିଆ ସାହିତ୍ୟର ଡିଜିଟାଲିକରଣ ଓ ସାଂସ୍କୃତିକ ପ୍ରଚାର।' 
+        },
       },
       {
         tag:         { en: 'Infrastructure',               or: 'ପାଇପାଇ ସଂରଚନା' },
         title:       { en: 'Road & Connectivity',          or: 'ସଡ଼କ ଓ ସଂଯୋଗ' },
-        description: { en: 'Improvement of rural roads, bridges, and last-mile connectivity.', or: 'ଗ୍ରାମୀଣ ସଡ଼କ ଓ ସେତୁ ଉନ୍ନତି।' },
+        description: { 
+          en: 'Improvement of rural roads, bridges, and last-mile connectivity.', 
+          or: 'ଗ୍ରାମୀଣ ସଡ଼କ ଓ ସେତୁ ଉନ୍ନତି।' 
+        },
       },
       {
         tag:         { en: 'Healthcare',                   or: 'ସ୍ୱାସ୍ଥ୍ୟ' },
         title:       { en: 'Healthcare Access',            or: 'ସ୍ୱାସ୍ଥ୍ୟ ସେବା ଉନ୍ନତି' },
-        description: { en: 'Upgrading health centres and improving service accessibility in rural areas.', or: 'ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର ଓ ଚିକିତ୍ସା ସୁବିଧା ବୃଦ୍ଧି।' },
+        description: { 
+          en: 'Upgrading health centres and improving service accessibility in rural areas.', 
+          or: 'ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର ଓ ଚିକିତ୍ସା ସୁବିଧା ବୃଦ୍ଧି।' 
+        },
       },
       {
         tag:         { en: 'Agriculture',                  or: 'କୃଷି' },
         title:       { en: 'Farmer Support',               or: 'କୃଷକ ସହାୟତା' },
-        description: { en: 'Strengthening irrigation, agricultural schemes, and rural livelihoods.', or: 'ସିଚାଇ, କୃଷି ଯୋଜନା ଓ ଗ୍ରାମୀଣ ଜୀବିକା ଶକ୍ତିକରଣ।' },
+        description: { 
+          en: 'Strengthening irrigation, agricultural schemes, and rural livelihoods.', 
+          or: 'ସିଚାଇ, କୃଷି ଯୋଜନା ଓ ଗ୍ରାମୀଣ ଜୀବିକା ଶକ୍ତିକରଣ।' },
       },
     ],
-    ctaTitle:  { en: 'Dhamnagar: A Youth-Driven Growth Model',                                or: 'ଯୁବ ଶକ୍ତି ସହ ଉଦୟମାନ ଧାମନଗର' },
-    ctaDesc:   { en: 'Through focused leadership and accountable governance, Dhamnagar is progressing as a model constituency in Odisha.', or: 'ଦୃଢ଼ ନେତୃତ୍ୱ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ମାଧ୍ୟମରେ ଧାମନଗର ଏକ ଆଦର୍ଶ ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଭାବେ ଗଢ଼ିଉଠୁଛି।' },
-    ctaButton: { en: 'Connect with Our Office',                                               or: 'ଆମ କାର୍ଯ୍ୟାଳୟ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ' },
+    ctaTitle:  { 
+      en: 'Dhamnagar: A Youth-Driven Growth Model',
+      or: 'ଯୁବ ଶକ୍ତି ସହ ଉଦୟମାନ ଧାମନଗର' 
+    },
+    ctaDesc:   { 
+      en: 'Through focused leadership and accountable governance, Dhamnagar is progressing as a model constituency in Odisha.',
+      or: 'ଦୃଢ଼ ନେତୃତ୍ୱ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ମାଧ୍ୟମରେ ଧାମନଗର ଏକ ଆଦର୍ଶ ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଭାବେ ଗଢ଼ିଉଠୁଛି।' 
+    },
+    ctaButton: { 
+      en: 'Connect with Our Office',
+      or: 'ଆମ କାର୍ଯ୍ୟାଳୟ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ' 
+    },
   },
 
   news: {
@@ -172,52 +213,65 @@ const content = {
     pressNote:       { en: '',                     or: '' },
     newsItems: [
       {
-        source: 'Sambad English', // same in both languages
+        source: 'Sambad English (Feb 2026)', // published 22 Feb 2026 :contentReference[oaicite:0]{index=0}
         tag:    { en: 'Higher Education', or: 'ଉଚ୍ଚ ଶିକ୍ଷା' },
         title:  { en: 'Every Odisha district to have university: Suryabanshi on varsity status demand', or: 'ପ୍ରତ୍ୟେକ ଓଡ଼ିଶା ଜିଲ୍ଲାରେ ବିଶ୍ଵବିଦ୍ୟାଳୟ: ସୂର୍ଯ୍ୟବଂଶୀଙ୍କ ଆବେଦନ ଉପରେ ପ୍ରତିକ୍ରିୟା' },
         link: 'https://sambadenglish.com/latest-news/every-odisha-district-to-have-university-suryabanshi-on-varsity-status-demand-for-shailabala-womens-college-11144822',
       },
       {
-        source: 'MyCityLinks',
-        tag:    { en: 'Leadership & Vision', or: 'ନେତୃତ୍ୱ ଓ ଭିଜନ' },
-        title:  { en: 'Redefining Odisha\'s Future: A Conversation with Minister Suryabanshi Suraj', or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍ ସହ ଓଡ଼ିଶାର ଭବିଷ୍ୟତ: ଏକ ଆଲୋଚନା' },
-        link: 'https://www.mycitylinks.in/redefining-odishas-future-a-conversation-with-minister-suryabanshi-suraj-',
+        source: 'New Indian Express (Feb 2026)', // published Feb 8 2026 :contentReference[oaicite:6]{index=6}
+        tag:    { en: 'Literature & Science', or: 'ସାହିତ୍ୟ ଓ ବିଜ୍ଞାନ' },
+        title:  { en: 'Madhuree’s book on space science for kids released by Minister Suryabanshi Suraj', or: 'ମଧୁରୀଙ୍କ ମହାକାଶ ବିଜ୍ଞାନ ପୁସ୍ତକ ମନ୍ତ୍ରୀ ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜଙ୍କ ଦ୍ୱାରା ଉନ୍ମୋଚିତ' },
+        link: 'https://www.newindianexpress.com/states/odisha/2026/Feb/08/madhurees-book-on-space-science-for-kids-released',
       },
       {
-        source: 'The Tribune',
+        source: 'New Indian Express (Dec 2025)', // published Dec 20 2025 :contentReference[oaicite:5]{index=5}
+        tag:    { en: 'Higher Education Policy', or: 'ଉଚ୍ଚ ଶିକ୍ଷା ନୀତି' },
+        title:  { en: 'Odisha eyes two higher education institutions in each block by 2047: Minister Suraj Suryabanshi', or: '୨୦୪୭ ସୁଦ୍ଧା ପ୍ରତି ବ୍ଲକରେ ଦୁଇଟି ଉଚ୍ଚ ଶିକ୍ଷାନୁଷ୍ଠାନ ଲକ୍ଷ୍ୟ: ମନ୍ତ୍ରୀ ସୂର୍ଯ୍ୟବଂଶୀ' },
+        link: 'https://www.newindianexpress.com/cities/bhubaneswar/2025/Dec/20/odisha-eyes-two-higher-education-institutions-in-each-block-minister-suraj-suryabanshi',
+      },
+      {
+        source: 'Times of India (Jul 2025)', // published ~Jul 2025 :contentReference[oaicite:4]{index=4}
+        tag:    { en: 'Student Welfare', or: 'ଛାତ୍ର ସୁରକ୍ଷା' },
+        title:  { en: 'Student sets self ablaze over harassment; Odisha govt to bear medical expenses, minister assures action', or: 'ଅଭିଯୋଗ ହେତୁ ଛାତ୍ରୀ ଆତ୍ମଦାହ: ସରକାର ଚିକିତ୍ସା ଖର୍ଚ୍ଚ ଦେବ, ମନ୍ତ୍ରୀ ପକ୍ଷରୁ କଡ଼ କାର୍ଯ୍ୟ ଆଶ୍ୱସନ' },
+        link: 'https://timesofindia.indiatimes.com/india/student-sets-self-ablaze-over-harassment-odisha-govt-to-bear-medical-expenses-state-minister-assures-strict-action/articleshow/122418096.cms',
+      },
+      {
+        source: 'The Tribune (May 2025)', // published May 3 2025 :contentReference[oaicite:2]{index=2}
         tag:    { en: 'Sports', or: 'କ୍ରୀଡ଼ା' },
         title:  { en: 'Odisha committed to grassroots sports development, says Minister Suryabanshi Suraj', or: 'ଗ୍ରାସ୍‌ରୁଟ୍ କ୍ରୀଡ଼ା ବିକାଶ ପାଇଁ ଓଡ଼ିଶା ପ୍ରତିବଦ୍ଧ: ମନ୍ତ୍ରୀ ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍' },
         link: 'https://www.tribuneindia.com/news/sports/odisha-committed-to-grassroots-sports-development-says-minister-suryabanshi-suraj/',
       },
       {
-        source: 'Times of India',
+        source: 'MyCityLinks (Dec 2024)', // published Dec 16 2024 :contentReference[oaicite:1]{index=1}
+        tag:    { en: 'Leadership & Vision', or: 'ନେତୃତ୍ୱ ଓ ଭିଜନ' },
+        title:  { en: 'Redefining Odisha\'s Future: A Conversation with Minister Suryabanshi Suraj', or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍ ସହ ଓଡ଼ିଶାର ଭବିଷ୍ୟତ: ଏକ ଆଲୋଚନା' },
+        link: 'https://www.mycitylinks.in/redefining-odishas-future-a-conversation-with-minister-suryabanshi-suraj-',
+      },
+      {
+        source: 'Times of India (Aug 2024)', // published Aug 31 2024 :contentReference[oaicite:3]{index=3}
         tag:    { en: 'Education & Governance', or: 'ଶିକ୍ଷା' },
         title:  { en: 'Odisha to amend University Act, confirms Higher Education Minister Suryabanshi Suraj', or: 'ବିଶ୍ଵବିଦ୍ୟାଳୟ ଆଇନ ସଂଶୋଧନ କରିବା: ଉଚ୍ଚ ଶିକ୍ଷା ମନ୍ତ୍ରୀ ଆଶ୍ୱସନ' },
         link: 'https://timesofindia.indiatimes.com/education/news/odisha-to-amend-university-act-confirms-higher-education-minister-suryabanshi-suraj/articleshow/112943927.cms',
       },
-      {
-        source: 'Times of India',
-        tag:    { en: 'Student Welfare', or: 'ଛାତ୍ର ସୁରକ୍ଷା' },
-        title:  { en: 'Student sets self ablaze over harassment; Odisha govt to bear medical expenses, minister assures action', or: 'ଅଭିଯୋଗ ହେତୁ ଛାତ୍ରୀ ଆତ୍ମଦାହ: ସରକାର ଚିକିତ୍ସା ଖର୍ଚ୍ଚ ଦେବ, ମନ୍ତ୍ରୀ ପକ୍ଷରୁ କଡ଼ କାର୍ଯ୍ୟ ଆଶ୍ୱସନ' },
-        link: 'https://timesofindia.indiatimes.com/india/student-sets-self-ablaze-over-harassment-odisha-govt-to-bear-medical-expenses-state-minister-assures-strict-action/articleshow/122418096.cms',
-      },
     ],
+    socialTitle: { en: 'Social Media', or: 'ସୋସିଆଲ ମିଡ଼ିଆ' },
   },
 
   gallery: {
     sectionTitle:    { en: 'Gallery',                                                                  or: 'ଗ୍ୟାଲେରୀ' },
     sectionSubtitle: { en: 'Moments from public service, governance milestones, and community engagement.', or: 'ଜନସେବା, ଶାସନୀୟ ମାଇଲସ୍ଟୋନ୍ ଓ ସମୁଦାୟ ସହଭାଗିତାର ମୁହୂର୍ତ୍ତଗୁଡ଼ିକ।' },
-    items: [
-      { en: 'Public Address at Community Gathering',    or: 'ସାମୁଦାୟିକ ସଭାରେ ଭାଷଣ' },
-      { en: 'Interaction with Youth Sports Teams',      or: 'ଯୁବ କ୍ରୀଡ଼ା ଦଳ ସହ ଆଲୋଚନା' },
-      { en: 'Visit to Educational Institution',         or: 'ଶିକ୍ଷା ସଂସ୍ଥା ସନ୍ଦର୍ଶନ' },
-      { en: 'Cultural Program Participation',           or: 'ସାଂସ୍କୃତିକ କାର୍ଯ୍ୟକ୍ରମରେ ଅଂଶଗ୍ରହଣ' },
-      { en: 'Sports Infrastructure Inauguration',       or: 'କ୍ରୀଡ଼ା ପ୍ରାଣାଳୀ ଉଦ୍ଘାଟନ' },
-      { en: 'Review Meeting with Officials',            or: 'ଅଧିକାରୀମାନଙ୍କ ସହ ସମୀକ୍ଷା ବୈଠକ' },
-      { en: 'Constituency Development Inspection',      or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଉନ୍ନୟନ କାର୍ଯ୍ୟ ପରିଦର୍ଶନ' },
-      { en: 'Interaction with Students',                or: 'ଛାତ୍ରଛାତ୍ରୀଙ୍କ ସହ ଆଲୋଚନା' },
-      { en: 'Cabinet Oath Ceremony',                    or: 'ମନ୍ତ୍ରିମଣ୍ଡଳ ଶପଥ ଗ୍ରହଣ ଅନୁଷ୍ଠାନ' },
-    ],
+    // items: [
+    //   { en: 'Public Address at Community Gathering',    or: 'ସାମୁଦାୟିକ ସଭାରେ ଭାଷଣ' },
+    //   { en: 'Interaction with Youth Sports Teams',      or: 'ଯୁବ କ୍ରୀଡ଼ା ଦଳ ସହ ଆଲୋଚନା' },
+    //   { en: 'Visit to Educational Institution',         or: 'ଶିକ୍ଷା ସଂସ୍ଥା ସନ୍ଦର୍ଶନ' },
+    //   { en: 'Cultural Program Participation',           or: 'ସାଂସ୍କୃତିକ କାର୍ଯ୍ୟକ୍ରମରେ ଅଂଶଗ୍ରହଣ' },
+    //   { en: 'Sports Infrastructure Inauguration',       or: 'କ୍ରୀଡ଼ା ପ୍ରାଣାଳୀ ଉଦ୍ଘାଟନ' },
+    //   { en: 'Review Meeting with Officials',            or: 'ଅଧିକାରୀମାନଙ୍କ ସହ ସମୀକ୍ଷା ବୈଠକ' },
+    //   { en: 'Constituency Development Inspection',      or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଉନ୍ନୟନ କାର୍ଯ୍ୟ ପରିଦର୍ଶନ' },
+    //   { en: 'Interaction with Students',                or: 'ଛାତ୍ରଛାତ୍ରୀଙ୍କ ସହ ଆଲୋଚନା' },
+    //   { en: 'Cabinet Oath Ceremony',                    or: 'ମନ୍ତ୍ରିମଣ୍ଡଳ ଶପଥ ଗ୍ରହଣ ଅନୁଷ୍ଠାନ' },
+    // ],
   },
 
   contact: {

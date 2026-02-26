@@ -24,7 +24,7 @@ Full English and Odia translation via React Context API. Language can be toggled
 
 ### Contact Form with Validation
 - Fields: Name, Phone, Email, Subject, Constituency, Message
-- Validates Indian phone numbers (10-digit, starting with 6–9) and email format
+- Validates Indian phone numbers (10-digit, starting with 6-9) and email format
 - Subject categories: Grievance, Meeting Request, Feedback, Media Enquiry, Other
 - Submissions are posted to `/api/contact` and appended to a private Google Sheet with a timestamp
 
@@ -32,7 +32,7 @@ Full English and Odia translation via React Context API. Language can be toggled
 | Section | Description |
 |---|---|
 | Hero | Full-screen intro with profile image and CTAs |
-| About | Biography and political journey timeline (2014–2024) |
+| About | Biography and political journey timeline (2014-2024) |
 | Constituency | Development stats (200+ projects, ₹500Cr+ mobilised) and 6 key initiatives |
 | News & Media | Lazy-loaded Facebook social feed |
 | Gallery | Masonry image grid with hover effects |
