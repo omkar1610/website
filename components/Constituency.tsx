@@ -75,7 +75,7 @@ export default function Constituency() {
           <h3 className="font-serif text-2xl md:text-3xl font-bold mb-3">{c.ctaTitle}</h3>
           <p className="text-white/60 max-w-xl mx-auto mb-6 text-sm leading-relaxed">{c.ctaDesc}</p>
           <a
-            href="https://wa.me/918895100753?text=Hello%2C%20I%20would%20like%20to%20connect%20with%20the%20office%20of%20MLA%20Suryabanshi%20Suraj."
+            href="#contact"
             className="inline-block bg-gold hover:bg-gold-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
           >
             {c.ctaButton}

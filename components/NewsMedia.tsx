@@ -25,10 +25,47 @@ export default function NewsMedia() {
           <p className="text-gray-500 text-lg">{n.sectionSubtitle}</p>
         </div>
 
+        {/* Press Coverage */}
+        <div className="mb-16">
+          <h3 className="font-serif text-xl font-bold text-navy mb-6">{n.pressTitle}</h3>
+          <div className="space-y-3">
+            {n.newsItems.map((item, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-4 p-5 bg-cream rounded-xl border border-divider"
+              >
+                <div className="w-1 self-stretch rounded-full bg-gold flex-shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-semibold text-gold uppercase tracking-wider">
+                      {item.tag}
+                    </span>
+                    <span className="text-gray-300 text-xs">·</span>
+                    <span className="text-xs text-gray-400">{item.source}</span>
+                  </div>
+                  {item.link ? (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-navy text-sm font-medium leading-snug hover:text-gold transition-colors"
+                    >
+                      {item.title}
+                    </a>
+                  ) : (
+                    <p className="text-navy text-sm font-medium leading-snug">{item.title}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-gray-400 mt-4 text-center">{n.pressNote}</p>
+        </div>
+
         {/* Social Grid
               mobile : Facebook full-width top, then 3 equal tiles in a row below
               desktop: Facebook left column, 3 tiles stacked right column          */}
-        <div className="mb-16 flex flex-col md:grid md:grid-cols-2 md:gap-6">
+        <div className="flex flex-col md:grid md:grid-cols-2 md:gap-6">
 
           {/* Facebook */}
           <div className="rounded-xl border border-divider overflow-hidden mb-3 md:mb-0">
@@ -131,32 +168,6 @@ export default function NewsMedia() {
             </div>
 
           </div>
-        </div>
-
-        {/* Press Coverage */}
-        <div>
-          <h3 className="font-serif text-xl font-bold text-navy mb-6">{n.pressTitle}</h3>
-          <div className="space-y-3">
-            {n.newsItems.map((item, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-4 p-5 bg-cream rounded-xl border border-divider"
-              >
-                <div className="w-1 self-stretch rounded-full bg-gold flex-shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-semibold text-gold uppercase tracking-wider">
-                      {item.tag}
-                    </span>
-                    <span className="text-gray-300 text-xs">·</span>
-                    <span className="text-xs text-gray-400">{item.source}</span>
-                  </div>
-                  <p className="text-navy text-sm font-medium leading-snug">{item.title}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-xs text-gray-400 mt-4 text-center">{n.pressNote}</p>
         </div>
       </div>
     </section>

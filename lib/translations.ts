@@ -1,487 +1,317 @@
 export type Lang = 'en' | 'or'
 
-// ─── ENGLISH ────────────────────────────────────────────────────────────────
-const en = {
+// All supported language codes at runtime (mirrors the Lang type)
+const LANGS: Lang[] = ['en', 'or']
+
+// ─── CO-LOCATED CONTENT ───────────────────────────────────────────────────────
+// Every translatable string lives here as { en: '...', or: '...' }.
+// Non-translatable values (URLs, numbers, source names) are plain strings/numbers.
+// Adding a new language: add its code to Lang + LANGS, then fill in every leaf.
+
+const content = {
   nav: {
-    name: 'Suryabanshi Suraj',
-    title: 'MLA, Dhamnagar',
+    name:  { en: 'Suryabanshi Suraj',                                       or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍' },
+    title: { en: 'MLA, Dhamnagar · Minister, Govt. of Odisha',              or: 'ବିଧାୟକ, ଧାମନଗର · ମନ୍ତ୍ରୀ, ଓଡ଼ିଶା ସରକାର' },
     links: {
-      about: 'About',
-      development: 'Development',
-      news: 'News & Media',
-      gallery: 'Gallery',
-      contact: 'Contact',
+      about:       { en: 'About',       or: 'ବିଷୟରେ' },
+      development: { en: 'Development', or: 'ଉନ୍ନୟନ' },
+      news:        { en: 'News & Media', or: 'ଖବର ଓ ମାଧ୍ୟମ' },
+      gallery:     { en: 'Gallery',     or: 'ଗ୍ୟାଲେରୀ' },
+      contact:     { en: 'Contact',     or: 'ଯୋଗାଯୋଗ' },
     },
   },
 
   hero: {
-    badge: 'Official Website',
-    nameFirst: 'Suryabanshi',
-    nameLast: 'Suraj',
-    role: 'MLA, Dhamnagar Constituency',
-    ministry: 'Minister, Government of Odisha',
-    quote:
-      'Committed to transparent governance, inclusive development, and empowering every citizen of Dhamnagar.',
-    ctaAbout: 'About Me',
-    ctaConstituency: 'Constituency Work',
+    badge:           { en: 'Official Website',                        or: 'ଅଧିକୃତ ୱେବସାଇଟ' },
+    nameFirst:       { en: 'Suryabanshi',                             or: 'ସୂର୍ଯ୍ୟବଂଶୀ' },
+    nameLast:        { en: 'Suraj',                                   or: 'ସୂରଜ୍' },
+    role:            { en: 'MLA, Dhamnagar Constituency (Bhadrak)',   or: 'ବିଧାୟକ, ଧାମନଗର ନିର୍ବାଚନ ମଣ୍ଡଳୀ (ଭଦ୍ରକ)' },
+    ministry:        {
+      en: 'Minister of State (Independent Charge) – Higher Education, Sports & Youth Services, Odia Language, Literature & Culture',
+      or: 'ସ୍ୱତନ୍ତ୍ର ଦାୟିତ୍ୱପ୍ରାପ୍ତ ରାଜ୍ୟମନ୍ତ୍ରୀ – ଉଚ୍ଚ ଶିକ୍ଷା, କ୍ରୀଡ଼ା ଓ ଯୁବ ସେବା, ଓଡ଼ିଆ ଭାଷା ସାହିତ୍ୟ ଓ ସଂସ୍କୃତି',
+    },
+    quote: {
+      en: 'Empowering youth, preserving heritage, and building a future-ready Odisha through transparent and accountable governance.',
+      or: 'ଯୁବ ସଶକ୍ତିକରଣ, ଐତିହ୍ୟ ସୁରକ୍ଷା ଓ ଆଧୁନିକ ଓଡ଼ିଶା ଗଢ଼ିବା ପାଇଁ ପାରଦର୍ଶୀ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ପ୍ରତି ପ୍ରତିବଦ୍ଧ।',
+    },
+    ctaAbout:        { en: 'About Me',           or: 'ମୋ ବିଷୟରେ' },
+    ctaConstituency: { en: 'Constituency Work',  or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ କାର୍ଯ୍ୟ' },
   },
 
   about: {
-    sectionTitle: 'About',
-    sectionSubtitle:
-      'Dedicated public servant, rooted in the culture and aspirations of Odisha.',
-    bioName: 'Suryabanshi Suraj',
-    bioPara1:
-      'Suryabanshi Suraj is a dedicated public servant and grassroots political leader who has been serving the people of Dhamnagar Constituency in Odisha. Born and raised with a deep connection to the cultural roots of Odisha, he has built his political career on the principles of inclusive development, social equity, and responsive governance.',
-    bioPara2:
-      'As Member of Legislative Assembly (MLA) from Dhamnagar and Minister in the Government of Odisha, he has worked tirelessly to bridge the gap between government initiatives and ground-level implementation, ensuring that the benefits of development reach every household in the constituency.',
-    bioPara3:
-      'His tenure has been marked by a sustained focus on improving education infrastructure, healthcare access, road connectivity, and agricultural support - critical pillars for the progress of rural Odisha.',
-    badge1: 'MLA, Dhamnagar',
-    badge2: 'Cabinet Minister',
-    badge3: 'Government of Odisha',
-    timelineTitle: 'Political Journey',
+    sectionTitle:    { en: 'About',                                                                     or: 'ବିଷୟରେ' },
+    sectionSubtitle: { en: "A young leader driven by purpose, progress, and pride in Odisha's heritage.", or: 'ଯୁବ ନେତୃତ୍ୱ, ଦୃଢ଼ ମୂଲ୍ୟବୋଧ ଓ ଓଡ଼ିଆ ସଂସ୍କୃତି ପ୍ରତି ଗର୍ବ।' },
+    bioName:         { en: 'Suryabanshi Suraj',                                                          or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍' },
+    bioPara1: {
+      en: 'Suryabanshi Suraj is a dedicated public servant and one of the youngest members of the Odisha Cabinet. Representing Dhamnagar Constituency in Bhadrak district, he combines grassroots political engagement with a modern, technology-driven approach to governance.',
+      or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍ ଧାମନଗର ନିର୍ବାଚନ ମଣ୍ଡଳୀର ବିଧାୟକ ଓ ଓଡ଼ିଶା ମନ୍ତ୍ରିମଣ୍ଡଳର ସବୁଠୁ ଯୁବ ସଦସ୍ୟମାନଙ୍କ ମଧ୍ୟରୁ ଗୋଟିଏ। ସେ ଘାସମୂଳ ସ୍ତରର ଲୋକସମ୍ପର୍କ ଓ ଆଧୁନିକ ପ୍ରଶାସନିକ ଦୃଷ୍ଟିକୋଣକୁ ଏକତ୍ର କରି ଶାସନକୁ ନୂତନ ଦିଗ ଦେଉଛନ୍ତି।',
+    },
+    bioPara2: {
+      en: 'With academic qualifications in Engineering (B.Tech) and Law (LL.B), he bridges innovation and legislation. His governance philosophy focuses on transparency, youth empowerment, institutional reform, and cultural preservation.',
+      or: 'ଇଞ୍ଜିନିୟରିଂ (ବି.ଟେକ୍) ଓ ଆଇନ (ଏଲ୍‌.ଏଲ୍‌.ବି) ଶିକ୍ଷା ପ୍ରାପ୍ତ ସେ ପ୍ରଯୁକ୍ତି ଓ ନୀତି ନିର୍ମାଣକୁ ସମନ୍ୱୟ କରି ନିଷ୍ପତ୍ତି ନେବାରେ ବିଶ୍ୱାସ କରନ୍ତି। ତାଙ୍କ ଶାସନ ଦର୍ଶନ ପାରଦର୍ଶିତା, ଯୁବ ସଶକ୍ତିକରଣ ଓ ସମାବେଶୀ ଉନ୍ନୟନ ଉପରେ ଆଧାରିତ।',
+    },
+    bioPara3: {
+      en: 'As Minister of State (Independent Charge) for Higher Education, Sports & Youth Services, and Odia Language, Literature & Culture, he is committed to transforming Odisha into a hub of educational excellence, athletic achievement, and linguistic pride.',
+      or: 'ଉଚ୍ଚ ଶିକ୍ଷା, କ୍ରୀଡ଼ା ଓ ଯୁବ ସେବା ସହିତ ଓଡ଼ିଆ ଭାଷା ସାହିତ୍ୟ ଓ ସଂସ୍କୃତି ବିଭାଗର ସ୍ୱତନ୍ତ୍ର ଦାୟିତ୍ୱ ନେଇ ସେ ଓଡ଼ିଶାକୁ ଶିକ୍ଷା, କ୍ରୀଡ଼ା ଓ ସାଂସ୍କୃତିକ କ୍ଷେତ୍ରରେ ଜାତୀୟ ଓ ବିଶ୍ୱ ସ୍ତରରେ ପରିଚିତ କରିବା ପାଇଁ ପ୍ରୟାସରତ।',
+    },
+    badge1: { en: 'MLA, Dhamnagar',                  or: 'ବିଧାୟକ, ଧାମନଗର' },
+    badge2: { en: 'Minister of State (Ind. Charge)',  or: 'ସ୍ୱତନ୍ତ୍ର ଦାୟିତ୍ୱପ୍ରାପ୍ତ ରାଜ୍ୟମନ୍ତ୍ରୀ' },
+    badge3: { en: 'Government of Odisha',             or: 'ଓଡ଼ିଶା ସରକାର' },
+    timelineTitle: { en: 'Political Journey', or: 'ରାଜନୈତିକ ଯାତ୍ରା' },
     timeline: [
       {
-        year: '2014',
-        title: 'First Electoral Victory',
-        description:
-          'Elected as MLA from Dhamnagar Constituency with a decisive mandate from the people of the region.',
+        year:        { en: '2022',              or: '2022' },
+        title:       { en: 'By-Election Victory', or: 'ଉପନିର୍ବାଚନରେ ବିଜୟ' },
+        description: {
+          en: 'Elected as MLA from Dhamnagar in the 2022 by-election, carrying forward a legacy of public service and earning a strong mandate from the people.',
+          or: '2022 ଉପନିର୍ବାଚନରେ ଧାମନଗରରୁ ବିଧାୟକ ଭାବେ ନିର୍ବାଚିତ ହୋଇ ଜନସେବାର ଏକ ନୂତନ ଅଧ୍ୟାୟ ଆରମ୍ଭ କଲେ।',
+        },
       },
       {
-        year: '2017',
-        title: 'Ministerial Appointment',
-        description:
-          'Appointed as Minister in the Government of Odisha, taking on expanded responsibilities for public welfare.',
+        year:        { en: '2024 - Re-Election',         or: '2024 (ପୁନର୍ନିର୍ବାଚନ)' },
+        title:       { en: 'Re-Elected with Strong Mandate', or: 'ଭାରୀ ଅଧିକ୍ୟତା ସହ ପୁନର୍ନିର୍ବାଚିତ' },
+        description: {
+          en: 'Re-elected with an overwhelming majority, reaffirming public trust in his leadership and development agenda.',
+          or: '2024 ନିର୍ବାଚନରେ ଲୋକମାନଙ୍କର ବିଶ୍ୱାସ ପୁନର୍ବାର ଜିତି ବୃହତ୍ ଅଧିକ୍ୟତା ସହ ପୁନର୍ନିର୍ବାଚିତ।',
+        },
       },
       {
-        year: '2019',
-        title: 'Re-elected with Stronger Mandate',
-        description:
-          'Re-elected by the people of Dhamnagar with an increased majority, reaffirming public trust.',
+        year:        { en: '2024 - Cabinet Induction',  or: '2024 (ମନ୍ତ୍ରିମଣ୍ଡଳରେ ଅନ୍ତର୍ଭୁକ୍ତ)' },
+        title:       { en: 'Inducted into Odisha Cabinet', or: 'ମନ୍ତ୍ରିମଣ୍ଡଳରେ ଅନ୍ତର୍ଭୁକ୍ତ' },
+        description: {
+          en: 'Entrusted by party leadership to serve in the Odisha Cabinet under Chief Minister Mohan Charan Majhi with independent charge of key youth-centric portfolios.',
+          or: 'ମୁଖ୍ୟମନ୍ତ୍ରୀ ମୋହନ ଚରଣ ମାଝିଙ୍କ ନେତୃତ୍ୱରେ ଓଡ଼ିଶା ମନ୍ତ୍ରିମଣ୍ଡଳରେ ସ୍ୱତନ୍ତ୍ର ଦାୟିତ୍ୱ ସହ ଯୋଗଦାନ।',
+        },
       },
       {
-        year: '2024',
-        title: 'Continued Service',
-        description:
-          'Continuing service as Minister and MLA with renewed focus on infrastructure, livelihoods, and youth.',
+        year:        { en: 'Present',                         or: 'ବର୍ତ୍ତମାନ' },
+        title:       { en: 'Youngest Voice in Governance',    or: 'ଯୁବ କଣ୍ଠସ୍ୱର' },
+        description: {
+          en: 'Currently serving as one of the youngest ministers in the state cabinet, focusing on education reform, sports infrastructure, and promotion of Odia culture.',
+          or: 'ରାଜ୍ୟର ଯୁବ ମନ୍ତ୍ରୀ ଭାବେ ଶିକ୍ଷା ସଂଶୋଧନ, କ୍ରୀଡ଼ା ପ୍ରାଣାଳୀ ଓ ଓଡ଼ିଆ ସଂସ୍କୃତି ପ୍ରଚାରରେ କେନ୍ଦ୍ରିତ।',
+        },
       },
     ],
     values: [
       {
-        title: 'Integrity',
-        desc: 'Upholding the highest standards of honesty and transparency in governance.',
+        title: { en: 'Integrity',            or: 'ସଚ୍ଚରିତ୍ରତା' },
+        desc:  { en: 'Transparent, accountable, and citizen-focused governance.', or: 'ପାରଦର୍ଶୀ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ପ୍ରତି ପ୍ରତିବଦ୍ଧତା।' },
       },
       {
-        title: 'People First',
-        desc: 'Every decision guided by the welfare and aspirations of the people of Dhamnagar.',
+        title: { en: 'Youth Empowerment',    or: 'ଯୁବ ସଶକ୍ତିକରଣ' },
+        desc:  { en: 'Investing in education, sports, and skills to shape the next generation.', or: 'ଶିକ୍ଷା, କ୍ରୀଡ଼ା ଓ କୌଶଳ ବିକାଶ ମାଧ୍ୟମରେ ନୂତନ ପିଢ଼ିକୁ ସଶକ୍ତ କରିବା।' },
       },
       {
-        title: 'Development',
-        desc: 'Driving sustainable infrastructure and economic growth for long-term prosperity.',
+        title: { en: 'Cultural Pride',       or: 'ସାଂସ୍କୃତିକ ଗର୍ବ' },
+        desc:  { en: 'Promoting Odia language, literature, and heritage globally.', or: 'ଓଡ଼ିଆ ଭାଷା, ସାହିତ୍ୟ ଓ ପାରମ୍ପରିକ ଐତିହ୍ୟର ସୁରକ୍ଷା ଓ ପ୍ରଚାର।' },
       },
       {
-        title: 'Accountability',
-        desc: 'Regular public reporting and open governance for complete transparency.',
+        title: { en: 'Inclusive Development', or: 'ସମାବେଶୀ ଉନ୍ନୟନ' },
+        desc:  { en: 'Ensuring development benefits reach every household.', or: 'ଉନ୍ନୟନର ଲାଭ ପ୍ରତ୍ୟେକ ଘରକୁ ପହଞ୍ଚାଇବା।' },
       },
     ],
   },
 
   constituency: {
-    sectionTitle: 'Constituency & Development',
-    sectionSubtitle:
-      'Dhamnagar - a region of immense potential, steadily transformed through targeted governance and sustained public investment.',
-    stats: [
-      { number: '10+', label: 'Years of Service' },
-      { number: '200+', label: 'Development Projects' },
-      { number: '50+', label: 'Villages Covered' },
-      { number: '₹500Cr+', label: 'Funds Mobilized' },
-
-    ],
-    initiatives: [
-      {
-        tag: 'Infrastructure',
-        title: 'Roads & Infrastructure',
-        description:
-          'Construction and upgrade of state and rural roads, bridges, and connectivity projects under PMGSY and state schemes.',
-      },
-      {
-        tag: 'Education',
-        title: 'Education',
-        description:
-          'New school buildings, upgraded facilities, scholarship programs, and digital learning infrastructure for students.',
-      },
-      {
-        tag: 'Healthcare',
-        title: 'Healthcare',
-        description:
-          'New health sub-centres, mobile health units, Biju Swasthya Kalyan Yojana coverage, and regular medical camps.',
-      },
-      {
-        tag: 'Agriculture',
-        title: 'Agriculture & Irrigation',
-        description:
-          'Irrigation canals, farmer support schemes, KALIA Yojana implementation, and soil health card distribution.',
-      },
-      {
-        tag: 'Social',
-        title: 'Women Empowerment',
-        description:
-          'Self-Help Group (SHG) promotion, Mission Shakti, livelihood training, and Anganwadi development programs.',
-      },
-      {
-        tag: 'Utilities',
-        title: 'Electrification & Water',
-        description:
-          'DDUGJY household electrification, solar street lighting, and Nal Jal Yojana piped water supply to rural households.',
-      },
-    ],
-    ctaTitle: 'Dhamnagar: A Region on the Rise',
-    ctaDesc:
-      'Through sustained investment and community-driven programs, Dhamnagar is emerging as a model constituency in Odisha - with improved quality of life, better connectivity, and empowered communities.',
-    ctaButton: 'Connect with Our Office',
-  },
-
-  news: {
-    sectionTitle: 'News & Media',
-    sectionSubtitle:
-      'Stay connected through official social platforms and press coverage.',
-    instagramDesc:
-      'Visual updates from constituency visits, public events, and cultural engagements across Dhamnagar.',
-    instagramBtn: 'View Profile on Instagram',
-    youtubeDesc:
-      'Speeches, press conferences, public addresses, and development project inaugurations from the constituency.',
-    youtubeBtn: 'Watch on YouTube',
-    pressTitle: 'Press Coverage',
-    pressNote: 'Replace with actual press links and headlines.',
-    newsItems: [
-      {
-        source: 'Odisha TV',
-        tag: 'Healthcare',
-        title:
-          'Minister Suryabanshi Suraj inaugurates new primary health centre in Dhamnagar block',
-      },
-      {
-        source: 'The Hindu',
-        tag: 'Infrastructure',
-        title:
-          'Dhamnagar MLA calls for expedited rural road connectivity in legislative assembly session',
-      },
-      {
-        source: 'Pragativadi',
-        tag: 'Social',
-        title:
-          "Mission Shakti SHG network expansion under Suraj's initiative reaches 500 groups across constituency",
-      },
-    ],
-  },
-
-  gallery: {
-    sectionTitle: 'Gallery',
-    sectionSubtitle:
-      'Moments from public service, constituency visits, and governance milestones.',
-    items: [
-      'Public Address at Community Event',
-      'Interaction with Youth Football Team',
-      'Visit to Indoor Sports Training Centre',
-      'Religious Ceremony Participation',
-      'Honouring Athletes at Award Ceremony',
-      'Sports Event Inauguration',
-      'Planning & Review Meeting with Officials',
-      'Interaction with Young Student',
-      'Lamp Lighting Ceremony at Cultural Program',
-    ],
-  },
-
-  contact: {
-    sectionTitle: 'Contact Us',
-    sectionSubtitle: 'Share your details and we will get back to you.',
-    nameLbl: 'Name',
-    namePlaceholder: 'Your full name',
-    phoneLbl: 'Phone Number',
-    phonePlaceholder: '10-digit mobile number',
-    emailLbl: 'Email',
-    emailPlaceholder: 'your@email.com',
-    subjectLbl: 'Subject',
-    subjectPlaceholder: 'Select a subject',
-    subjects: ['Grievance', 'Meeting Request', 'Feedback', 'Media Enquiry', 'Other'],
-    constituencyLbl: 'Constituency / Area',
-    constituencyPlaceholder: 'Your ward or area',
-    messageLbl: 'Message',
-    messagePlaceholder: 'Write your message here...',
-    submitBtn: 'Submit',
-    submittingBtn: 'Submitting…',
-    successMsg: 'Thank you! Your message has been submitted.',
-    errorMsg: 'Something went wrong. Please try again.',
-    phoneOrEmailRequired: 'Please provide at least a phone number or email address.',
-  },
-
-  footer: {
-    brandName: 'Suryabanshi Suraj',
-    brandSubtitle: 'MLA, Dhamnagar Constituency · Minister, Govt. of Odisha',
-    brandDesc:
-      'Official portal for constituency information, government schemes, development updates, and citizen engagement.',
-    quickLinksTitle: 'Quick Links',
-    officialLinksTitle: 'Official Resources',
-    quickLinks: [
-      'About',
-      'Constituency & Development',
-      'News & Media',
-      'Gallery',
-    ],
-    officialLinks: [
-      'Government of Odisha',
-      'Odisha Legislative Assembly',
-      'Ministry of Finance, Odisha',
-      'National Portal of India',
-    ],
-    allRightsReserved: 'All rights reserved.',
-    disclaimer:
-      'This is the official website of Suryabanshi Suraj, MLA Dhamnagar. Content is maintained by the office of the MLA. For government schemes, visit',
-    disclaimerLinkLabel: 'odisha.gov.in',
-  },
-}
-
-// ─── ODIA ────────────────────────────────────────────────────────────────────
-// All values below are placeholders - replace each one with actual Odia text.
-const or: typeof en = {
-  nav: {
-    name: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍',
-    title: 'ବିଧାୟକ, ଧାମନଗର',
-    links: {
-      about: 'ବିଷୟରେ',
-      development: 'ଉନ୍ନୟନ',
-      news: 'ଖବର ଓ ମାଧ୍ୟମ',
-      gallery: 'ଗ୍ୟାଲେରୀ',
-      contact: 'ଯୋଗାଯୋଗ',
+    sectionTitle:    { en: 'Constituency & Development',         or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଓ ଉନ୍ନୟନ' },
+    sectionSubtitle: {
+      en: 'Dhamnagar – advancing through infrastructure growth, social investment, and community-driven governance.',
+      or: 'ଧାମନଗର – ଆଧାରଭୂତ ପ୍ରାଣାଳୀ, ସାମାଜିକ ନିବେଶ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ମାଧ୍ୟମରେ ଅଗ୍ରଗତିଶୀଳ ଅଞ୍ଚଳ।',
     },
-  },
-
-  hero: {
-    badge: 'ଅଧିକୃତ ୱେବସାଇଟ',
-    nameFirst: 'ସୂର୍ଯ୍ୟବଂଶୀ',
-    nameLast: 'ସୂରଜ୍',
-    role: 'ବିଧାୟକ, ଧାମନଗର ନିର୍ବାଚନ ମଣ୍ଡଳୀ',
-    ministry: 'ମନ୍ତ୍ରୀ, ଓଡ଼ିଶା ସରକାର',
-    quote:
-      'ପାରଦର୍ଶୀ ଶାସନ, ସମାବେଶୀ ଉନ୍ନୟନ ଏବଂ ଧାମନଗରର ପ୍ରତ୍ୟେକ ନାଗରିକଙ୍କୁ ସଶକ୍ତ କରିବା ପ୍ରତି ପ୍ରତିବଦ୍ଧ।',
-    ctaAbout: 'ମୋ ବିଷୟରେ',
-    ctaConstituency: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ କାର୍ଯ୍ୟ',
-  },
-
-  about: {
-    sectionTitle: 'ବିଷୟରେ',
-    sectionSubtitle:
-      'ଓଡ଼ିଶାର ସଂସ୍କୃତି ଓ ଆକାଂକ୍ଷା ସହ ଗଭୀର ସମ୍ପର୍କିତ ଏକ ସମର୍ପିତ ଜନସେବକ।',
-    bioName: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍',
-    bioPara1:
-      'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍ ଧାମନଗର ନିର୍ବାଚନ ମଣ୍ଡଳୀର ଲୋକମାନଙ୍କୁ ସେବା କରୁଥିବା ଏକ ସମର୍ପିତ ଜନପ୍ରତିନିଧି ଓ ଘାସମୂଳ ସ୍ତରର ରାଜନୈତିକ ନେତା। ଓଡ଼ିଶାର ସଂସ୍କୃତି ସହ ଗଭୀର ସମ୍ପର୍କ ରଖି ସେ ସମାବେଶୀ ଉନ୍ନୟନ, ସାମାଜିକ ସମତା ଓ ପ୍ରତିକ୍ରିୟାଶୀଳ ଶାସନର ସିଦ୍ଧାନ୍ତରେ ତାଙ୍କ ରାଜନୈତିକ ଯାତ୍ରା ଗଢ଼ିଛନ୍ତି।',
-    bioPara2:
-      'ଧାମନଗରର ବିଧାୟକ ଓ ଓଡ଼ିଶା ସରକାରର ମନ୍ତ୍ରୀ ଭାବେ ସେ ସରକାରୀ ଯୋଜନା ଓ ଭୂମିସ୍ତରର କାର୍ଯ୍ୟନ୍ୱୟନ ମଧ୍ୟର ଦୂରତା କମାଇବାରେ ଅବିରତ ପ୍ରୟାସ କରିଛନ୍ତି, ଯାହା ଫଳରେ ଉନ୍ନୟନର ଲାଭ ପ୍ରତ୍ୟେକ ଘରକୁ ପହଞ୍ଚି ପାରିଛି।',
-    bioPara3:
-      'ତାଙ୍କ କାର୍ଯ୍ୟକାଳ ଶିକ୍ଷା ପ୍ରାଣାଳୀ, ସ୍ୱାସ୍ଥ୍ୟ ସେବା, ସଡ଼କ ସଂଯୋଗ ଓ କୃଷି ସହାୟତା ଉନ୍ନତିରେ କେନ୍ଦ୍ରିତ ରହିଛି - ଯାହା ଗ୍ରାମୀଣ ଓଡ଼ିଶାର ଉନ୍ନତିର ମୂଳ ଭିତ୍ତି।',
-    badge1: 'ବିଧାୟକ, ଧାମନଗର',
-    badge2: 'ମନ୍ତ୍ରୀମଣ୍ଡଳ ସଦସ୍ୟ',
-    badge3: 'ଓଡ଼ିଶା ସରକାର',
-    timelineTitle: 'ରାଜନୈତିକ ଯାତ୍ରା',
-    timeline: [
-      {
-        year: '2014',
-        title: 'ପ୍ରଥମ ନିର୍ବାଚନୀ ବିଜୟ',
-        description:
-          'ଧାମନଗର ନିର୍ବାଚନ ମଣ୍ଡଳୀରୁ ଲୋକମାନଙ୍କର ସ୍ପଷ୍ଟ ଆଦେଶ ସହ ବିଧାୟକ ଭାବେ ନିର୍ବାଚିତ।',
-      },
-      {
-        year: '2017',
-        title: 'ମନ୍ତ୍ରୀ ଭାବେ ନିଯୁକ୍ତି',
-        description:
-          'ଜନକଳ୍ୟାଣ କ୍ଷେତ୍ରରେ ବିସ୍ତୃତ ଦାୟିତ୍ୱ ଗ୍ରହଣ କରି ଓଡ଼ିଶା ସରକାରରେ ମନ୍ତ୍ରୀ ଭାବେ ନିଯୁକ୍ତ।',
-      },
-      {
-        year: '2019',
-        title: 'ଅଧିକ ଅଧିକ୍ୟତା ସହ ପୁନର୍ନିର୍ବାଚିତ',
-        description:
-          'ଧାମନଗରର ଲୋକମାନଙ୍କର ବୃଦ୍ଧିତ ଆସ୍ଥା ସହ ପୁନର୍ନିର୍ବାଚିତ।',
-      },
-      {
-        year: '2024',
-        title: 'ସେବା ଅବ୍ୟାହତ',
-        description:
-          'ପାଇପାଇ ସଂରଚନା, ଜୀବିକା ଓ ଯୁବ ସଶକ୍ତିକରଣ ଉପରେ ନୂତନ ଗୁରୁତ୍ୱ ସହ ସେବା ଜାରି।',
-      },
-    ],
-    values: [
-      {
-        title: 'ସଚ୍ଚରିତ୍ରତା',
-        desc: 'ଶାସନରେ ସର୍ବୋଚ୍ଚ ସତ୍ୟନିଷ୍ଠା ଓ ପାରଦର୍ଶିତା ରକ୍ଷା କରିବା।',
-      },
-      {
-        title: 'ଜନପ୍ରଥମ',
-        desc: 'ଧାମନଗରର ଲୋକମାନଙ୍କ ମଙ୍ଗଳ ଓ ଆକାଂକ୍ଷା ଆଧାରିତ ପ୍ରତ୍ୟେକ ସିଦ୍ଧାନ୍ତ।',
-      },
-      {
-        title: 'ଉନ୍ନୟନ',
-        desc: 'ଦୀର୍ଘକାଳୀନ ସମୃଦ୍ଧି ପାଇଁ ସସ୍ଥାୟୀ ପ୍ରାଣାଳୀ ଓ ଆର୍ଥିକ ବୃଦ୍ଧି।',
-      },
-      {
-        title: 'ଦାୟିତ୍ୱବୋଧ',
-        desc: 'ପୂର୍ଣ୍ଣ ପାରଦର୍ଶିତା ପାଇଁ ନିୟମିତ ସାର୍ବଜନିକ ଅନୁସନ୍ଧାନ ଓ ଖୋଲା ଶାସନ।',
-      },
-    ],
-  },
-
-  constituency: {
-    sectionTitle: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଓ ଉନ୍ନୟନ',
-    sectionSubtitle:
-      'ଧାମନଗର - ବିଶାଳ ସମ୍ଭାବନାର ଏକ ଅଞ୍ଚଳ, ଯାହା ଲକ୍ଷ୍ୟଭିତ୍ତିକ ଶାସନ ଓ ସ୍ଥାୟୀ ପୁଞ୍ଜିନିବେଶ ଦ୍ୱାରା ପରିବର୍ତ୍ତିତ ହେଉଛି।',
     stats: [
-      { number: '୧୦+', label: 'ବର୍ଷର ସେବା' },
-      { number: '୨୦୦+', label: 'ଉନ୍ନୟନ ପ୍ରକଳ୍ପ' },
-      { number: '୫୦+', label: 'ଆବର୍ତ୍ତ ଗ୍ରାମ' },
-      { number: '₹୫୦୦କୋଟି+', label: 'ସଂଗୃହୀତ ଧନରାଶି' },
+      { number: { en: '4+',       or: '୪+' },         label: { en: 'Years as MLA',        or: 'ବର୍ଷର ସେବା' } },
+      { number: { en: '200+',     or: '୨୦୦+' },       label: { en: 'Development Works',   or: 'ଉନ୍ନୟନ କାର୍ଯ୍ୟ' } },
+      { number: { en: '50+',      or: '୫୦+' },        label: { en: 'Villages Covered',    or: 'ଆବର୍ତ୍ତ ଗ୍ରାମ' } },
+      { number: { en: '₹500Cr+',  or: '₹୫୦୦କୋଟି+' }, label: { en: 'Funds Mobilized',     or: 'ସଂଗୃହୀତ ଧନରାଶି' } },
     ],
     initiatives: [
       {
-        tag: 'ପାଇପାଇ ସଂରଚନା',
-        title: 'ସଡ଼କ ଓ ପ୍ରାଣାଳୀ',
-        description:
-          'ରାଜ୍ୟ ଓ ଗ୍ରାମୀଣ ସଡ଼କ, ସେତୁ ଓ ସଂଯୋଗ ପ୍ରକଳ୍ପର ନିର୍ମାଣ ଓ ଉନ୍ନତି।',
+        tag:         { en: 'Higher Education',             or: 'ଉଚ୍ଚ ଶିକ୍ଷା' },
+        title:       { en: 'University & College Modernization', or: 'ମହାବିଦ୍ୟାଳୟ ଓ ବିଶ୍ୱବିଦ୍ୟାଳୟ ଉନ୍ନତି' },
+        description: { en: 'Strengthening higher education institutions, promoting research culture, and enabling digital infrastructure.', or: 'ଡିଜିଟାଲ ଢାଞ୍ଚା, ଗବେଷଣା ପ୍ରୋତ୍ସାହନ ଓ ଶିକ୍ଷା ଗୁଣବତ୍ତା ବୃଦ୍ଧି।' },
       },
       {
-        tag: 'ଶିକ୍ଷା',
-        title: 'ଶିକ୍ଷା',
-        description:
-          'ନୂତନ ବିଦ୍ୟାଳୟ ଭବନ, ଉନ୍ନତ ସୁବିଧା, ଛାତ୍ରବୃତ୍ତି ଓ ଡିଜିଟାଲ ଶିକ୍ଷା ପ୍ରାଣାଳୀ।',
+        tag:         { en: 'Sports',                       or: 'କ୍ରୀଡ଼ା' },
+        title:       { en: 'Youth & Sports Infrastructure', or: 'କ୍ରୀଡ଼ା ପ୍ରାଣାଳୀ ଓ ଯୁବ ସେବା' },
+        description: { en: 'Developing stadiums, training centres, and grassroots talent programs across the constituency.', or: 'ଷ୍ଟେଡିୟମ୍, ପ୍ରଶିକ୍ଷଣ କେନ୍ଦ୍ର ଓ ଘାସମୂଳ ସ୍ତରର କ୍ରୀଡ଼ା ପ୍ରତିଭା ପ୍ରୋତ୍ସାହନ।' },
       },
       {
-        tag: 'ସ୍ୱାସ୍ଥ୍ୟ',
-        title: 'ସ୍ୱାସ୍ଥ୍ୟ ସେବା',
-        description:
-          'ନୂତନ ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର, ମୋବାଇଲ୍ ଚିକିତ୍ସା ଇଉନିଟ୍ ଓ ନିୟମିତ ଚିକିତ୍ସା ଶିବିର।',
+        tag:         { en: 'Culture',                      or: 'ସଂସ୍କୃତି' },
+        title:       { en: 'Odia Language & Heritage Promotion', or: 'ଓଡ଼ିଆ ଭାଷା ଓ ସାହିତ୍ୟ ପ୍ରଚାର' },
+        description: { en: 'Digitization of Odia literature, support to artists, and global cultural outreach initiatives.', or: 'ଓଡ଼ିଆ ସାହିତ୍ୟର ଡିଜିଟାଲିକରଣ ଓ ସାଂସ୍କୃତିକ ପ୍ରଚାର।' },
       },
       {
-        tag: 'କୃଷି',
-        title: 'କୃଷି ଓ ସିଚାଇ',
-        description:
-          'ସିଚାଇ ପ୍ରଣାଳୀ, କୃଷକ ସହାୟତା ଯୋଜନା ଓ ମାଟି ସ୍ୱାସ୍ଥ୍ୟ କାର୍ଡ ବଣ୍ଟନ।',
+        tag:         { en: 'Infrastructure',               or: 'ପାଇପାଇ ସଂରଚନା' },
+        title:       { en: 'Road & Connectivity',          or: 'ସଡ଼କ ଓ ସଂଯୋଗ' },
+        description: { en: 'Improvement of rural roads, bridges, and last-mile connectivity.', or: 'ଗ୍ରାମୀଣ ସଡ଼କ ଓ ସେତୁ ଉନ୍ନତି।' },
       },
       {
-        tag: 'ସାମାଜିକ',
-        title: 'ମହିଳା ସଶକ୍ତିକରଣ',
-        description:
-          'ସ୍ୱୟଂସାହାୟକ ଗୋଷ୍ଠୀ ପ୍ରୋତ୍ସାହନ, ଜୀବିକା ପ୍ରଶିକ୍ଷଣ ଓ ଆଙ୍ଗନବାଡ଼ି ଉନ୍ନତି।',
+        tag:         { en: 'Healthcare',                   or: 'ସ୍ୱାସ୍ଥ୍ୟ' },
+        title:       { en: 'Healthcare Access',            or: 'ସ୍ୱାସ୍ଥ୍ୟ ସେବା ଉନ୍ନତି' },
+        description: { en: 'Upgrading health centres and improving service accessibility in rural areas.', or: 'ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର ଓ ଚିକିତ୍ସା ସୁବିଧା ବୃଦ୍ଧି।' },
       },
       {
-        tag: 'ସାର୍ବଜନିକ ସେବା',
-        title: 'ବିଦ୍ୟୁତ୍ ଓ ପାଣି',
-        description:
-          'ଗୃହସ୍ଥ ବିଦ୍ୟୁତୀକରଣ, ସୂର୍ଯ୍ୟ ଆଲୋକ ବ୍ୟବସ୍ଥା ଓ ପାଇପ୍ ଜଳ ସରବରାହ।',
+        tag:         { en: 'Agriculture',                  or: 'କୃଷି' },
+        title:       { en: 'Farmer Support',               or: 'କୃଷକ ସହାୟତା' },
+        description: { en: 'Strengthening irrigation, agricultural schemes, and rural livelihoods.', or: 'ସିଚାଇ, କୃଷି ଯୋଜନା ଓ ଗ୍ରାମୀଣ ଜୀବିକା ଶକ୍ତିକରଣ।' },
       },
     ],
-    ctaTitle: 'ଉଦୟମାନ ଧାମନଗର',
-    ctaDesc:
-      'ସ୍ଥାୟୀ ପୁଞ୍ଜିନିବେଶ ଓ ସମୁଦାୟ ଆଧାରିତ କାର୍ଯ୍ୟକ୍ରମ ଦ୍ୱାରା ଧାମନଗର ଓଡ଼ିଶାର ଏକ ଆଦର୍ଶ ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଭାବେ ଉଦ୍ଭାସିତ।',
-    ctaButton: 'ଆମ କାର୍ଯ୍ୟାଳୟ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ',
+    ctaTitle:  { en: 'Dhamnagar: A Youth-Driven Growth Model',                                or: 'ଯୁବ ଶକ୍ତି ସହ ଉଦୟମାନ ଧାମନଗର' },
+    ctaDesc:   { en: 'Through focused leadership and accountable governance, Dhamnagar is progressing as a model constituency in Odisha.', or: 'ଦୃଢ଼ ନେତୃତ୍ୱ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ମାଧ୍ୟମରେ ଧାମନଗର ଏକ ଆଦର୍ଶ ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଭାବେ ଗଢ଼ିଉଠୁଛି।' },
+    ctaButton: { en: 'Connect with Our Office',                                               or: 'ଆମ କାର୍ଯ୍ୟାଳୟ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ' },
   },
 
   news: {
-    sectionTitle: 'ଖବର ଓ ମାଧ୍ୟମ',
-    sectionSubtitle:
-      'ଅଧିକୃତ ସୋସିଆଲ୍ ପ୍ଲାଟଫର୍ମ ଓ ପ୍ରେସ୍ ଖବର ମାଧ୍ୟମରେ ଯୁକ୍ତ ରୁହନ୍ତୁ।',
-    instagramDesc:
-      'ଧାମନଗରର ବିଭିନ୍ନ କାର୍ଯ୍ୟକ୍ରମ ଓ ସାର୍ବଜନିକ ସଭାର ଚିତ୍ରାଙ୍କନ।',
-    instagramBtn: 'ଇନ୍ଷ୍ଟାଗ୍ରାମରେ ଦେଖନ୍ତୁ',
-    youtubeDesc:
-      'ଭାଷଣ, ପ୍ରେସ୍ ସମ୍ମେଳନ ଓ ଉନ୍ନୟନ ପ୍ରକଳ୍ପ ଉଦ୍ଘାଟନର ଭିଡିଓ।',
-    youtubeBtn: 'ୟୁଟ୍ୟୁବ୍ରେ ଦେଖନ୍ତୁ',
-    pressTitle: 'ପ୍ରେସ୍ ଖବର',
-    pressNote: 'ଏଠାରେ ପ୍ରାକୃତିକ ପ୍ରେସ୍ ଲିଙ୍କ ଓ ଶୀର୍ଷକ ଯୋଡନ୍ତୁ।',
+    sectionTitle:    { en: 'News & Media',         or: 'ଖବର ଓ ମାଧ୍ୟମ' },
+    sectionSubtitle: { en: 'Stay updated with official announcements, public engagements, and media coverage.', or: 'ଅଧିକୃତ ଘୋଷଣା, ସାର୍ବଜନିକ କାର୍ଯ୍ୟକ୍ରମ ଓ ପ୍ରେସ୍ କଭରେଜ୍ ସମ୍ବନ୍ଧୀୟ ଅଦ୍ୟତନ।' },
+    instagramDesc:   { en: 'Updates from constituency visits, youth events, and cultural programs.', or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ସନ୍ଦର୍ଶନ, ଯୁବ କାର୍ଯ୍ୟକ୍ରମ ଓ ସାଂସ୍କୃତିକ ଆୟୋଜନର ଛବି ଓ ଅଦ୍ୟତନ।' },
+    instagramBtn:    { en: 'View on Instagram',    or: 'ଇନ୍ଷ୍ଟାଗ୍ରାମରେ ଦେଖନ୍ତୁ' },
+    youtubeDesc:     { en: 'Speeches, inaugurations, and development updates from Dhamnagar.', or: 'ଭାଷଣ, ଉଦ୍ଘାଟନ ଓ ଉନ୍ନୟନ କାର୍ଯ୍ୟକ୍ରମର ଭିଡିଓ ଅଦ୍ୟତନ।' },
+    youtubeBtn:      { en: 'Watch on YouTube',     or: 'ୟୁଟ୍ୟୁବ୍ରେ ଦେଖନ୍ତୁ' },
+    pressTitle:      { en: 'Press Coverage',       or: 'ପ୍ରେସ୍ କଭରେଜ୍' },
+    pressNote:       { en: '',                     or: '' },
     newsItems: [
       {
-        source: 'Odisha TV',
-        tag: 'ସ୍ୱାସ୍ଥ୍ୟ',
-        title:
-          'ମନ୍ତ୍ରୀ ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍ ଧାମନଗରରେ ନୂତନ ପ୍ରାଥମିକ ସ୍ୱାସ୍ଥ୍ୟ କେନ୍ଦ୍ର ଉଦ୍ଘାଟନ କଲେ',
+        source: 'Sambad English', // same in both languages
+        tag:    { en: 'Higher Education', or: 'ଉଚ୍ଚ ଶିକ୍ଷା' },
+        title:  { en: 'Every Odisha district to have university: Suryabanshi on varsity status demand', or: 'ପ୍ରତ୍ୟେକ ଓଡ଼ିଶା ଜିଲ୍ଲାରେ ବିଶ୍ଵବିଦ୍ୟାଳୟ: ସୂର୍ଯ୍ୟବଂଶୀଙ୍କ ଆବେଦନ ଉପରେ ପ୍ରତିକ୍ରିୟା' },
+        link: 'https://sambadenglish.com/latest-news/every-odisha-district-to-have-university-suryabanshi-on-varsity-status-demand-for-shailabala-womens-college-11144822',
       },
       {
-        source: 'The Hindu',
-        tag: 'ପାଇପାଇ ସଂରଚନା',
-        title:
-          'ବିଧାନସଭାରେ ଧାମନଗର ବିଧାୟକଙ୍କ ଦ୍ୱାରା ଗ୍ରାମୀଣ ସଡ଼କ ସଂଯୋଗ ତ୍ୱରାନ୍ବିତ କରିବା ପାଇଁ ଆହ୍ୱାନ',
+        source: 'MyCityLinks',
+        tag:    { en: 'Leadership & Vision', or: 'ନେତୃତ୍ୱ ଓ ଭିଜନ' },
+        title:  { en: 'Redefining Odisha\'s Future: A Conversation with Minister Suryabanshi Suraj', or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍ ସହ ଓଡ଼ିଶାର ଭବିଷ୍ୟତ: ଏକ ଆଲୋଚନା' },
+        link: 'https://www.mycitylinks.in/redefining-odishas-future-a-conversation-with-minister-suryabanshi-suraj-',
       },
       {
-        source: 'Pragativadi',
-        tag: 'ସାମାଜିକ',
-        title:
-          'ମିଶନ୍ ଶକ୍ତି ଅଧୀନରେ ୫୦୦ ସ୍ୱୟଂସାହାୟକ ଗୋଷ୍ଠୀର ବିସ୍ତାର',
+        source: 'The Tribune',
+        tag:    { en: 'Sports', or: 'କ୍ରୀଡ଼ା' },
+        title:  { en: 'Odisha committed to grassroots sports development, says Minister Suryabanshi Suraj', or: 'ଗ୍ରାସ୍‌ରୁଟ୍ କ୍ରୀଡ଼ା ବିକାଶ ପାଇଁ ଓଡ଼ିଶା ପ୍ରତିବଦ୍ଧ: ମନ୍ତ୍ରୀ ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍' },
+        link: 'https://www.tribuneindia.com/news/sports/odisha-committed-to-grassroots-sports-development-says-minister-suryabanshi-suraj/',
+      },
+      {
+        source: 'Times of India',
+        tag:    { en: 'Education & Governance', or: 'ଶିକ୍ଷା' },
+        title:  { en: 'Odisha to amend University Act, confirms Higher Education Minister Suryabanshi Suraj', or: 'ବିଶ୍ଵବିଦ୍ୟାଳୟ ଆଇନ ସଂଶୋଧନ କରିବା: ଉଚ୍ଚ ଶିକ୍ଷା ମନ୍ତ୍ରୀ ଆଶ୍ୱସନ' },
+        link: 'https://timesofindia.indiatimes.com/education/news/odisha-to-amend-university-act-confirms-higher-education-minister-suryabanshi-suraj/articleshow/112943927.cms',
+      },
+      {
+        source: 'Times of India',
+        tag:    { en: 'Student Welfare', or: 'ଛାତ୍ର ସୁରକ୍ଷା' },
+        title:  { en: 'Student sets self ablaze over harassment; Odisha govt to bear medical expenses, minister assures action', or: 'ଅଭିଯୋଗ ହେତୁ ଛାତ୍ରୀ ଆତ୍ମଦାହ: ସରକାର ଚିକିତ୍ସା ଖର୍ଚ୍ଚ ଦେବ, ମନ୍ତ୍ରୀ ପକ୍ଷରୁ କଡ଼ କାର୍ଯ୍ୟ ଆଶ୍ୱସନ' },
+        link: 'https://timesofindia.indiatimes.com/india/student-sets-self-ablaze-over-harassment-odisha-govt-to-bear-medical-expenses-state-minister-assures-strict-action/articleshow/122418096.cms',
       },
     ],
   },
 
   gallery: {
-    sectionTitle: 'ଗ୍ୟାଲେରୀ',
-    sectionSubtitle:
-      'ଜନସେବା, ନିର୍ବାଚନ ମଣ୍ଡଳୀ ସନ୍ଦର୍ଶନ ଓ ଶାସନର ମୁହୂର୍ତ୍ତଗୁଡ଼ିକ।',
+    sectionTitle:    { en: 'Gallery',                                                                  or: 'ଗ୍ୟାଲେରୀ' },
+    sectionSubtitle: { en: 'Moments from public service, governance milestones, and community engagement.', or: 'ଜନସେବା, ଶାସନୀୟ ମାଇଲସ୍ଟୋନ୍ ଓ ସମୁଦାୟ ସହଭାଗିତାର ମୁହୂର୍ତ୍ତଗୁଡ଼ିକ।' },
     items: [
-      'ସାମୁଦାୟିକ କାର୍ଯ୍ୟକ୍ରମରେ ଭାଷଣ',
-      'ଯୁବ ଫୁଟବଲ୍ ଦଳ ସହ ଆଲୋଚନା',
-      'ଇନ୍ଡୋର୍ କ୍ରୀଡ଼ା ପ୍ରଶିକ୍ଷଣ କେନ୍ଦ୍ର ସନ୍ଦର୍ଶନ',
-      'ଧାର୍ମିକ କାର୍ଯ୍ୟକ୍ରମରେ ଅଂଶଗ୍ରହଣ',
-      'କ୍ରୀଡ଼ାବିଦ୍ମାନଙ୍କୁ ସମ୍ମାନ',
-      'କ୍ରୀଡ଼ା କାର୍ଯ୍ୟକ୍ରମ ଉଦ୍ଘାଟନ',
-      'ଅଧିକାରୀମାନଙ୍କ ସହ ସମୀକ୍ଷା ବୈଠକ',
-      'ଏକ ଯୁବ ଛାତ୍ର ସହ ଆଲୋଚନା',
-      'ସାଂସ୍କୃତିକ କାର୍ଯ୍ୟକ୍ରମରେ ପ୍ରଦୀପ ପ୍ରଜ୍ୱଳନ',
+      { en: 'Public Address at Community Gathering',    or: 'ସାମୁଦାୟିକ ସଭାରେ ଭାଷଣ' },
+      { en: 'Interaction with Youth Sports Teams',      or: 'ଯୁବ କ୍ରୀଡ଼ା ଦଳ ସହ ଆଲୋଚନା' },
+      { en: 'Visit to Educational Institution',         or: 'ଶିକ୍ଷା ସଂସ୍ଥା ସନ୍ଦର୍ଶନ' },
+      { en: 'Cultural Program Participation',           or: 'ସାଂସ୍କୃତିକ କାର୍ଯ୍ୟକ୍ରମରେ ଅଂଶଗ୍ରହଣ' },
+      { en: 'Sports Infrastructure Inauguration',       or: 'କ୍ରୀଡ଼ା ପ୍ରାଣାଳୀ ଉଦ୍ଘାଟନ' },
+      { en: 'Review Meeting with Officials',            or: 'ଅଧିକାରୀମାନଙ୍କ ସହ ସମୀକ୍ଷା ବୈଠକ' },
+      { en: 'Constituency Development Inspection',      or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଉନ୍ନୟନ କାର୍ଯ୍ୟ ପରିଦର୍ଶନ' },
+      { en: 'Interaction with Students',                or: 'ଛାତ୍ରଛାତ୍ରୀଙ୍କ ସହ ଆଲୋଚନା' },
+      { en: 'Cabinet Oath Ceremony',                    or: 'ମନ୍ତ୍ରିମଣ୍ଡଳ ଶପଥ ଗ୍ରହଣ ଅନୁଷ୍ଠାନ' },
     ],
   },
 
   contact: {
-    sectionTitle: 'ଆମ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ',
-    sectionSubtitle: 'ଆପଣଙ୍କ ବିବରଣ ଦିଅନ୍ତୁ, ଆମେ ଶୀଘ୍ର ଯୋଗାଯୋଗ କରିବୁ।',
-    nameLbl: 'ନାମ',
-    namePlaceholder: 'ଆପଣଙ୍କ ପୂରା ନାମ',
-    phoneLbl: 'ଫୋନ ନମ୍ବର',
-    phonePlaceholder: '୧୦ ଅଙ୍କ ବିଶିଷ୍ଟ ମୋବାଇଲ ନମ୍ବର',
-    emailLbl: 'ଇମେଲ',
-    emailPlaceholder: 'your@email.com',
-    subjectLbl: 'ବିଷୟ',
-    subjectPlaceholder: 'ଏକ ବିଷୟ ବାଛନ୍ତୁ',
-    subjects: ['ଅଭିଯୋଗ', 'ସାକ୍ଷାତ ଅନୁରୋଧ', 'ମତାମତ', 'ମିଡ଼ିଆ ଅନୁସନ୍ଧାନ', 'ଅନ୍ୟ'],
-    constituencyLbl: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ / ଅଞ୍ଚଳ',
-    constituencyPlaceholder: 'ଆପଣଙ୍କ ୱାର୍ଡ ବା ଅଞ୍ଚଳ',
-    messageLbl: 'ସନ୍ଦେଶ',
-    messagePlaceholder: 'ଏଠାରେ ଆପଣଙ୍କ ସନ୍ଦେଶ ଲଖନ୍ତୁ...',
-    submitBtn: 'ଦାଖଲ କରନ୍ତୁ',
-    submittingBtn: 'ଦାଖଲ ହେଉଛି…',
-    successMsg: 'ଧନ୍ୟବାଦ! ଆପଣଙ୍କ ସନ୍ଦେଶ ଦାଖଲ ହୋଇଛି।',
-    errorMsg: 'କିଛି ତ୍ରୁଟି ହୋଇଛି। ଦୟାକରି ପୁନଃ ଚେଷ୍ଟା କରନ୍ତୁ।',
-    phoneOrEmailRequired: 'ଦୟାକରି ଅନ୍ତତଃ ଏକ ଫୋନ ନମ୍ବର ବା ଇମେଲ ଦିଅନ୍ତୁ।',
+    sectionTitle:            { en: 'Contact Us',                    or: 'ଆମ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ' },
+    sectionSubtitle:         { en: 'Reach out to the office for grievances, assistance, or meeting requests.', or: 'ଅଭିଯୋଗ, ସହାୟତା ବା ସାକ୍ଷାତ୍କାର ଅନୁରୋଧ ପାଇଁ କାର୍ଯ୍ୟାଳୟ ସହ ସମ୍ପର୍କ କରନ୍ତୁ।' },
+    nameLbl:                 { en: 'Name',                          or: 'ନାମ' },
+    namePlaceholder:         { en: 'Your full name',                or: 'ଆପଣଙ୍କ ପୂରା ନାମ' },
+    phoneLbl:                { en: 'Phone Number',                  or: 'ଫୋନ ନମ୍ବର' },
+    phonePlaceholder:        { en: '10-digit mobile number',        or: '୧୦ ଅଙ୍କ ବିଶିଷ୍ଟ ମୋବାଇଲ ନମ୍ବର' },
+    emailLbl:                { en: 'Email',                         or: 'ଇମେଲ' },
+    emailPlaceholder:        { en: 'your@email.com',                or: 'your@email.com' },
+    subjectLbl:              { en: 'Subject',                       or: 'ବିଷୟ' },
+    subjectPlaceholder:      { en: 'Select a subject',              or: 'ଏକ ବିଷୟ ବାଛନ୍ତୁ' },
+    subjects: [
+      { en: 'Grievance',              or: 'ଅଭିଯୋଗ' },
+      { en: 'Meeting Request',        or: 'ସାକ୍ଷାତ୍କାର ଅନୁରୋଧ' },
+      { en: 'Development Suggestion', or: 'ଉନ୍ନୟନ ପ୍ରସ୍ତାବ' },
+      { en: 'Media Enquiry',          or: 'ମିଡ଼ିଆ ଅନୁସନ୍ଧାନ' },
+      { en: 'Other',                  or: 'ଅନ୍ୟ' },
+    ],
+    constituencyLbl:         { en: 'Area / Village',                or: 'ଅଞ୍ଚଳ / ଗ୍ରାମ' },
+    constituencyPlaceholder: { en: 'Your ward or village name',     or: 'ଆପଣଙ୍କ ୱାର୍ଡ ବା ଗ୍ରାମ ନାମ' },
+    messageLbl:              { en: 'Message',                       or: 'ସନ୍ଦେଶ' },
+    messagePlaceholder:      { en: 'Write your message here...',    or: 'ଏଠାରେ ଆପଣଙ୍କ ସନ୍ଦେଶ ଲେଖନ୍ତୁ...' },
+    submitBtn:               { en: 'Submit',                        or: 'ଦାଖଲ କରନ୍ତୁ' },
+    submittingBtn:           { en: 'Submitting…',                   or: 'ଦାଖଲ ହେଉଛି…' },
+    successMsg:              { en: 'Thank you. Your message has been received.', or: 'ଧନ୍ୟବାଦ। ଆପଣଙ୍କ ସନ୍ଦେଶ ଗ୍ରହଣ କରାଗଲା।' },
+    errorMsg:                { en: 'Something went wrong. Please try again.',   or: 'କିଛି ତ୍ରୁଟି ହୋଇଛି। ଦୟାକରି ପୁନଃ ଚେଷ୍ଟା କରନ୍ତୁ।' },
+    phoneOrEmailRequired:    { en: 'Please provide at least a phone number or email address.', or: 'ଦୟାକରି ଅନ୍ତତଃ ଏକ ଫୋନ ନମ୍ବର ବା ଇମେଲ ଦିଅନ୍ତୁ।' },
   },
 
   footer: {
-    brandName: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍',
-    brandSubtitle: 'ବିଧାୟକ, ଧାମନଗର · ମନ୍ତ୍ରୀ, ଓଡ଼ିଶା ସରକାର',
-    brandDesc:
-      'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ସୂଚନା, ସରକାରୀ ଯୋଜନା ଓ ଜନସମ୍ପର୍କ ପାଇଁ ଅଧିକୃତ ପୋର୍ଟାଲ୍।',
-    quickLinksTitle: 'ତ୍ୱରିତ ଲିଙ୍କ',
-    officialLinksTitle: 'ଅଧିକୃତ ସନ୍ଦର୍ଭ',
+    brandName:          { en: 'Suryabanshi Suraj',                                                   or: 'ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍' },
+    brandSubtitle:      { en: 'MLA, Dhamnagar · Minister of State (Ind. Charge), Govt. of Odisha',   or: 'ବିଧାୟକ, ଧାମନଗର · ସ୍ୱତନ୍ତ୍ର ଦାୟିତ୍ୱପ୍ରାପ୍ତ ରାଜ୍ୟମନ୍ତ୍ରୀ, ଓଡ଼ିଶା ସରକାର' },
+    brandDesc:          { en: 'Official portal for constituency development updates, ministerial initiatives, and citizen engagement.', or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଓ ମନ୍ତ୍ରାଳୟ ସମ୍ବନ୍ଧୀୟ ସୂଚନା ପାଇଁ ଅଧିକୃତ ପୋର୍ଟାଲ୍।' },
+    quickLinksTitle:    { en: 'Quick Links',                                                          or: 'ତ୍ୱରିତ ଲିଙ୍କ' },
+    officialLinksTitle: { en: 'Official Resources',                                                   or: 'ଅଧିକୃତ ସନ୍ଦର୍ଭ' },
     quickLinks: [
-      'ବିଷୟରେ',
-      'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଓ ଉନ୍ନୟନ',
-      'ଖବର ଓ ମାଧ୍ୟମ',
-      'ଗ୍ୟାଲେରୀ',
+      { en: 'About',                       or: 'ବିଷୟରେ' },
+      { en: 'Constituency & Development',  or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ଓ ଉନ୍ନୟନ' },
+      { en: 'News & Media',                or: 'ଖବର ଓ ମାଧ୍ୟମ' },
+      { en: 'Gallery',                     or: 'ଗ୍ୟାଲେରୀ' },
+    ],
+    quickLinksUrls: [
+      { en: '#about',                       or: '#about' },
+      { en: '#constituency',                or: '#constituency' },
+      { en: '#news',                        or: '#news' },
+      { en: '#gallery',                     or: '#gallery' },
     ],
     officialLinks: [
-      'ଓଡ଼ିଶା ସରକାର',
-      'ଓଡ଼ିଶା ବିଧାନସଭା',
-      'ଆର୍ଥିକ ବିଭାଗ, ଓଡ଼ିଶା',
-      'ଭାରତର ଜାତୀୟ ପୋର୍ଟାଲ୍',
+      { en: 'Odisha Legislative Assembly', or: 'ଓଡ଼ିଶା ବିଧାନସଭା' },
+      { en: 'Higher Education Department', or: 'ଉଚ୍ଚ ଶିକ୍ଷା ବିଭାଗ' },
+      { en: 'Sports & Youth Services Department', or: 'କ୍ରୀଡା ଓ ଯୁବ ସେବା ବିଭାଗ' },
+      { en: 'Odia Language, Literature & Culture Department',    or: 'ଓଡ଼ିଆ ଭାଷା, ସାହିତ୍ୟ ଓ ସଂସ୍କୃତି ବିଭାଗ' },
     ],
-    allRightsReserved: 'ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ।',
-    disclaimer:
-      'ଏହା ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍, ବିଧାୟକ ଧାମନଗରଙ୍କ ଅଧିକୃତ ୱେବସାଇଟ। ବିଷୟବସ୍ତୁ ବିଧାୟକଙ୍କ କାର୍ଯ୍ୟାଳୟ ଦ୍ୱାରା ପରିଚାଳିତ। ସରକାରୀ ଯୋଜନା ପାଇଁ ଦେଖନ୍ତୁ',
-    disclaimerLinkLabel: 'odisha.gov.in',
+    officialLinksUrls: [
+      { en: 'https://assembly.odisha.gov.in/Details.aspx?page=CouncilOfMinister/Shri%20Suryabanshi%20Suraj.HTML', or: 'https://assembly.odisha.gov.in/Details.aspx?page=CouncilOfMinister/Shri%20Suryabanshi%20Suraj.HTML' },
+      { en: 'https://dhe.odisha.gov.in', or: 'https://dhe.odisha.gov.in' },
+      { en: 'https://sports.odisha.gov.in',    or: 'https://sports.odisha.gov.in' },
+      { en: 'https://culture.odisha.gov.in',    or: 'https://culture.odisha.gov.in' },
+    ],
+    allRightsReserved:   { en: 'All rights reserved.',                                        or: 'ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ।' },
+    disclaimer:          { en: 'This is the official website of Suryabanshi Suraj, MLA Dhamnagar. Content maintained by the office of the Minister. For official government schemes, visit', or: 'ଏହା ସୂର୍ଯ୍ୟବଂଶୀ ସୂରଜ୍, ବିଧାୟକ ଧାମନଗରଙ୍କ ଅଧିକୃତ ୱେବସାଇଟ। ବିଷୟବସ୍ତୁ ମନ୍ତ୍ରୀଙ୍କ କାର୍ଯ୍ୟାଳୟ ଦ୍ୱାରା ପରିଚାଳିତ। ସରକାରୀ ଯୋଜନା ପାଇଁ ଦେଖନ୍ତୁ' },
+    disclaimerLinkLabel: { en: 'odisha.gov.in',                                               or: 'odisha.gov.in' },
   },
 }
 
-export const translations: Record<Lang, typeof en> = { en, or }
+// ─── DERIVE ──────────────────────────────────────────────────────────────────
+// Recursively walks `content` and replaces every { en, or } leaf with the
+// value for the requested language.  Plain strings/numbers pass through as-is.
+// To add a new language: add it to Lang + LANGS, then fill every leaf above.
+
+function derive(lang: Lang, node: unknown): unknown {
+  if (Array.isArray(node)) return node.map((item) => derive(lang, item))
+  if (node !== null && typeof node === 'object') {
+    const keys = Object.keys(node as object)
+    if (keys.length > 0 && keys.every((k) => LANGS.includes(k as Lang))) {
+      // This is a translation leaf — return the requested language's value
+      return (node as Record<Lang, unknown>)[lang]
+    }
+    return Object.fromEntries(
+      Object.entries(node as object).map(([k, v]) => [k, derive(lang, v)])
+    )
+  }
+  return node
+}
+
+// ─── EXPORTS ─────────────────────────────────────────────────────────────────
+
+// Derive the English shape once so we can use it as the canonical type.
+const en = derive('en', content)
+
+export type Translations = typeof en
+export const translations: Record<Lang, Translations> = {
+  en: en as Translations,
+  or: derive('or', content) as Translations,
+}
