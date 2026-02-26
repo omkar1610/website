@@ -4,6 +4,8 @@ Live site: [surajdemoportfolio.vercel.app](https://surajdemoportfolio.vercel.app
 
 Official website for **Suryabanshi Suraj**, MLA from Dhamnagar Constituency and Cabinet Minister, Government of Odisha, India. The site serves as a public-facing platform for political presence, constituency development updates, and citizen engagement.
 
+Link to contact form submissions spreadsheet: [Google Sheet](https://docs.google.com/spreadsheets/d/1j9ch2N6S6l20MAbF6D6eUTTXgENHxGOWgSn9vsgb4qA/edit?gid=0#gid=0)
+
 ---
 
 ## Tech Stack
