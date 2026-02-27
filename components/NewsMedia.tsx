@@ -172,7 +172,7 @@ export default function NewsMedia() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* ── LEFT — PRESS ─────────────────────────────────────────────── */}
-          <div className="flex flex-col h-[800px]">
+          <div className="flex flex-col md:h-[800px]">
             <h3 className="font-serif text-xl font-bold text-navy mb-4">
               {n.pressTitle}
             </h3>
@@ -256,14 +256,14 @@ export default function NewsMedia() {
           </div>
 
           {/* ── RIGHT — SOCIAL ───────────────────────────────────────────── */}
-          <div className="flex flex-col h-[800px]">
+          <div className="flex flex-col md:h-[800px]">
             <h3 className="font-serif text-xl font-bold text-navy mb-6">
               {n.socialTitle}
             </h3>
 
             <div className="flex flex-col flex-1">
               {/* Facebook — top 80% */}
-              <div className="rounded-xl border border-divider overflow-hidden flex-[8] mb-4">
+              <div className="rounded-xl border border-divider overflow-hidden h-[500px] md:h-auto md:flex-[8] mb-4">
                 <div className="bg-[#1877F2] px-4 py-3 flex items-center gap-2 text-white">
                   <span className="text-sm font-semibold">Facebook</span>
                   <span className="text-white/60 text-xs ml-1">@suraj.sthitaprajna</span>
