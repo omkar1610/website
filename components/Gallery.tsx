@@ -17,9 +17,9 @@ const galleryMeta = [
   { id: "3", src: `${BASE_URL}/3.jpg?v=2`, cols: 1, rows: 1 },
   { id: "4", src: `${BASE_URL}/4.jpg?v=2`, cols: 1, rows: 1 },
   { id: "5", src: `${BASE_URL}/5.jpg?v=2`, cols: 1, rows: 1 },
-  { id: "6", src: `${BASE_URL}/6.jpg?v=2`, cols: 2, rows: 1 },
   { id: "7", src: `${BASE_URL}/7.jpg?v=2`, cols: 1, rows: 1 },
   { id: "8", src: `${BASE_URL}/8.jpg?v=2`, cols: 1, rows: 1 },
+  { id: "6", src: `${BASE_URL}/6.jpg?v=2`, cols: 2, rows: 2 },
   { id: "9", src: `${BASE_URL}/9.jpg?v=2`, cols: 2, rows: 1 },
 ];
 

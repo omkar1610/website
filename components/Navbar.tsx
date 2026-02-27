@@ -6,14 +6,42 @@ import { useLanguage } from '@/context/LanguageContext'
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
   const { lang, setLang, t } = useLanguage()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const sectionIds = ['about', 'constituency', 'news', 'gallery', 'contact']
+    const observers: IntersectionObserver[] = []
+
+    // Clear highlight when hero is in view
+    const heroEl = document.getElementById('top')
+    if (heroEl) {
+      const heroObserver = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection('') },
+        { rootMargin: '0px 0px -50% 0px' }
+      )
+      heroObserver.observe(heroEl)
+      observers.push(heroObserver)
+    }
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (!el) return
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id) },
+        { rootMargin: '-40% 0px -55% 0px' }
+      )
+      observer.observe(el)
+      observers.push(observer)
+    })
+
+    return () => observers.forEach((o) => o.disconnect())
   }, [])
 
   const navLinks = [
@@ -45,17 +73,23 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-gold ${
-                  isScrolled ? 'text-gray-700' : 'text-white/90'
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.slice(1)
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-gold ${
+                    isActive
+                      ? 'text-gold'
+                      : isScrolled ? 'text-gray-700' : 'text-white/90'
+                  }`}
+                >
+                  {link.label}
+                  {isActive && <span className="block h-0.5 bg-gold mt-0.5 rounded-full" />}
+                </a>
+              )
+            })}
 
             {/* Language Toggle */}
             <div
@@ -150,16 +184,21 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden bg-white mt-2 rounded-lg shadow-lg py-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="block px-4 py-3 text-gray-700 hover:text-gold hover:bg-cream text-sm font-medium transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.slice(1)
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`block px-4 py-3 text-sm font-medium transition-colors hover:text-gold hover:bg-cream ${
+                    isActive ? 'text-gold border-l-2 border-gold pl-3.5' : 'text-gray-700'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              )
+            })}
           </div>
         )}
       </div>
