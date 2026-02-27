@@ -5,6 +5,7 @@ import { FaXTwitter, FaInstagram, FaYoutube } from 'react-icons/fa6'
 import { FiRefreshCw } from 'react-icons/fi'
 import Script from 'next/script'
 import { useLanguage } from '@/context/LanguageContext'
+import ScrollReveal from '@/components/ScrollReveal'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -161,18 +162,18 @@ export default function NewsMedia() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-16">
+        <ScrollReveal className="mb-16">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mb-2">
             {n.sectionTitle}
           </h2>
           <div className="w-16 h-1 bg-gold mb-4" />
           <p className="text-gray-500 text-lg">{n.sectionSubtitle}</p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* ── LEFT — PRESS ─────────────────────────────────────────────── */}
-          <div className="flex flex-col md:h-[800px]">
+          <ScrollReveal direction="left" className="flex flex-col md:h-[800px]">
             <h3 className="font-serif text-xl font-bold text-navy mb-4">
               {n.pressTitle}
             </h3>
@@ -253,10 +254,10 @@ export default function NewsMedia() {
                 ))}
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* ── RIGHT — SOCIAL ───────────────────────────────────────────── */}
-          <div className="flex flex-col md:h-[800px]">
+          <ScrollReveal direction="right" delay={150} className="flex flex-col md:h-[800px]">
             <h3 className="font-serif text-xl font-bold text-navy mb-6">
               {n.socialTitle}
             </h3>
@@ -321,7 +322,7 @@ export default function NewsMedia() {
                 </a>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>

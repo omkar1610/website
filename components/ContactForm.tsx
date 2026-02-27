@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const SUBJECT_VALUES = ['Grievance', 'Meeting Request', 'Feedback', 'Media Enquiry', 'Other']
 
@@ -61,11 +62,12 @@ export default function ContactForm() {
   return (
     <section id="contact" className="bg-white py-12">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
+        <ScrollReveal className="text-center mb-8">
           <h2 className="font-serif text-3xl font-bold text-navy mb-2">{c.sectionTitle}</h2>
           <p className="text-gray-500 text-sm">{c.sectionSubtitle}</p>
-        </div>
+        </ScrollReveal>
 
+        <ScrollReveal delay={100}>
         <form onSubmit={handleSubmit} className="space-y-4 bg-gray-50 rounded-2xl p-6 shadow-sm border border-gray-100">
           {/* Name */}
           <div>
@@ -175,6 +177,7 @@ export default function ContactForm() {
             {status === 'loading' ? c.submittingBtn : c.submitBtn}
           </button>
         </form>
+        </ScrollReveal>
       </div>
     </section>
   )

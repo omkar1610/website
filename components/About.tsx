@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
+import ScrollReveal from '@/components/ScrollReveal'
 
 // Icons stay here - only text comes from translations
 const valueIcons = [
@@ -27,18 +28,18 @@ export default function About() {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16">
+        <ScrollReveal className="mb-16">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mb-2">
             {a.sectionTitle}
           </h2>
           <div className="w-16 h-1 bg-gold mb-4" />
           <p className="text-gray-500 text-lg">{a.sectionSubtitle}</p>
-        </div>
+        </ScrollReveal>
 
         {/* Bio Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-20">
           {/* Photo */}
-          <div className="lg:col-span-2">
+          <ScrollReveal direction="left" className="lg:col-span-2">
             <div className="aspect-[3/4] relative rounded-xl overflow-hidden bg-cream shadow-md">
               <Image
                 src="/about-photo.jpg"
@@ -48,10 +49,10 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-cream/40 to-transparent" />
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Bio Text */}
-          <div className="lg:col-span-3 flex flex-col justify-center">
+          <ScrollReveal direction="right" delay={150} className="lg:col-span-3 flex flex-col justify-center">
             <h3 className="font-serif text-2xl font-bold text-navy mb-4">{a.bioName}</h3>
             <p className="text-gray-600 leading-relaxed mb-4">{a.bioPara1}</p>
             <p className="text-gray-600 leading-relaxed mb-4">{a.bioPara2}</p>
@@ -67,36 +68,37 @@ export default function About() {
                 {a.badge3}
               </span>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* Values */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
           {a.values.map((v, i) => (
-            <div
-              key={i}
-              className="text-center p-5 rounded-xl border border-divider hover:border-gold/40 hover:shadow-md transition-all group"
-            >
-              <div className="w-10 h-10 bg-navy/10 text-navy rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-gold/10 group-hover:text-gold transition-colors">
-                {valueIcons[i]}
+            <ScrollReveal key={i} delay={i * 100}>
+              <div className="text-center p-5 rounded-xl border border-divider hover:border-gold/40 hover:shadow-md transition-all group">
+                <div className="w-10 h-10 bg-navy/10 text-navy rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-gold/10 group-hover:text-gold transition-colors">
+                  {valueIcons[i]}
+                </div>
+                <h4 className="font-semibold text-navy mb-1 text-sm">{v.title}</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">{v.desc}</p>
               </div>
-              <h4 className="font-semibold text-navy mb-1 text-sm">{v.title}</h4>
-              <p className="text-gray-400 text-xs leading-relaxed">{v.desc}</p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Timeline */}
         <div>
-          <h3 className="font-serif text-2xl font-bold text-navy mb-10 text-center">
-            {a.timelineTitle}
-          </h3>
+          <ScrollReveal>
+            <h3 className="font-serif text-2xl font-bold text-navy mb-10 text-center">
+              {a.timelineTitle}
+            </h3>
+          </ScrollReveal>
 
           {/* Desktop: horizontal */}
           <div className="hidden md:block">
             <div className="grid grid-cols-4 gap-6">
               {a.timeline.map((item, i) => (
-                <div key={item.year} className="flex flex-col items-center relative">
+                <ScrollReveal key={item.year} delay={i * 100} className="flex flex-col items-center relative">
                   {i > 0 && <div className="absolute top-[7px] left-0 right-1/2 h-px bg-divider" />}
                   {i < a.timeline.length - 1 && <div className="absolute top-[7px] left-1/2 right-0 h-px bg-divider" />}
                   <div className="w-3.5 h-3.5 rounded-full bg-gold border-4 border-white shadow-sm mb-5 z-10" />
@@ -105,16 +107,15 @@ export default function About() {
                     <h4 className="font-semibold text-navy mt-1 mb-2 text-sm">{item.title}</h4>
                     <p className="text-gray-500 text-xs leading-relaxed">{item.description}</p>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
 
           {/* Mobile: vertical */}
-
           <div className="md:hidden space-y-0">
             {a.timeline.map((item, i) => (
-              <div key={item.year} className="flex gap-4">
+              <ScrollReveal key={item.year} delay={i * 80} className="flex gap-4">
                 <div className="flex flex-col items-center">
                   <div className="w-3 h-3 rounded-full bg-gold border-2 border-white shadow-sm mt-1.5 flex-shrink-0" />
                   {i < a.timeline.length - 1 && <div className="w-px flex-1 bg-divider mt-1" />}
@@ -124,7 +125,7 @@ export default function About() {
                   <h4 className="font-semibold text-navy mt-1 mb-2 text-sm">{item.title}</h4>
                   <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

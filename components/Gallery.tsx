@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
+import ScrollReveal from '@/components/ScrollReveal'
 
 // Non-translatable layout data stays here
 // const DATA_URL = 'https://cdn.jsdelivr.net/gh/omkar1610/site_assets@main/data.json?v=2'
@@ -59,42 +60,37 @@ export default function Gallery() {
     <section id="gallery" className="py-20 bg-cream">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-12">
+        <ScrollReveal className="mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mb-2">
             {g.sectionTitle}
           </h2>
           <div className="w-16 h-1 bg-gold mb-4" />
           <p className="text-gray-500 text-lg">{g.sectionSubtitle}</p>
-        </div>
+        </ScrollReveal>
 
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[180px]">
           {galleryMeta.map((meta, i) => (
-            // console log
-            // console.log(meta, captions[meta.id]?.[lang]),
-            <div
-              // key={i}
+            <ScrollReveal
               key={meta.id}
-              className={`relative rounded-xl overflow-hidden group cursor-pointer ${
-                meta.cols === 2 ? 'col-span-2' : 'col-span-1'
-              } ${meta.rows === 2 ? 'row-span-2' : 'row-span-1'}`}
+              delay={i * 60}
+              className={`${meta.cols === 2 ? 'col-span-2' : 'col-span-1'} ${meta.rows === 2 ? 'row-span-2' : 'row-span-1'}`}
             >
-              <Image
-                src={meta.src}
-                // alt={g.items[i]}
-                alt={captions[meta.id]?.[lang] || 'Gallery image'}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-3">
-                <span className="text-white text-xs font-medium bg-black/50 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-1 group-hover:translate-y-0">
-                  {/* {g.items[i]} */}
-                  {captions[meta.id]?.[lang]|| 'Gallery image'}
-                  {/* console.log(captions[meta.id]?.[lang]) */}
-                </span>
+              <div className="relative rounded-xl overflow-hidden group cursor-pointer h-full">
+                <Image
+                  src={meta.src}
+                  alt={captions[meta.id]?.[lang] || 'Gallery image'}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-3">
+                  <span className="text-white text-xs font-medium bg-black/50 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-1 group-hover:translate-y-0">
+                    {captions[meta.id]?.[lang] || 'Gallery image'}
+                  </span>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
