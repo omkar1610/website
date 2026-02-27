@@ -84,7 +84,7 @@ const content = {
 
       {
         en: 'From the playground to the podium, we are channeling the boundless energy of our youth. By fostering a culture of sportsmanship and excellence, we are establishing Odisha as the true sports capital of India.',
-        or: 'ଖେଳମାଠରୁ ପୁରସ୍କାର ମଞ୍ଚ ପର୍ଯ୍ୟନ୍ତ, ଆମେ ଯୁବଶକ୍ତିର ଅସୀମ ଉର୍ଜାକୁ ସଠିକ ଦିଗରେ ପରିଚାଳିତ କରୁଛୁ। କ୍ରୀଡ଼ାସ୍ପୃହା ଓ କୃତିତ୍ୱର ସଂସ୍କୃତିକୁ ପ୍ରୋତ୍ସାହନ ଦେଇ, ଓଡ଼ିଶାକୁ ଭାରତର ସତ୍ୟ କ୍ରୀଡ଼ା ରାଜଧାନୀ ଭାବେ ସ୍ଥାପିତ କରୁଛୁ।',
+        or: 'ଖେଳ ପଡିଆରୁ ପୁରସ୍କାର ମଞ୍ଚ ପର୍ଯ୍ୟନ୍ତ, ଆମେ ଯୁବଶକ୍ତିର ଅସୀମ ଉର୍ଜାକୁ ସଠିକ ଦିଗରେ ପରିଚାଳିତ କରୁଛୁ। କ୍ରୀଡ଼ାସ୍ପୃହା ଓ କୃତିତ୍ୱର ସଂସ୍କୃତିକୁ ପ୍ରୋତ୍ସାହନ ଦେଇ, ଓଡ଼ିଶାକୁ ଭାରତର ସତ୍ୟ କ୍ରୀଡ଼ା ରାଜଧାନୀ ଭାବେ ସ୍ଥାପିତ କରୁଛୁ।',
       },
 
       {

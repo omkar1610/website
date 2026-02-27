@@ -91,28 +91,41 @@ export default function About() {
           <h3 className="font-serif text-2xl font-bold text-navy mb-10 text-center">
             {a.timelineTitle}
           </h3>
-          <div className="relative">
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-divider -translate-x-1/2 hidden md:block" />
-            <div className="space-y-8">
+
+          {/* Desktop: horizontal */}
+          <div className="hidden md:block">
+            <div className="grid grid-cols-4 gap-6">
               {a.timeline.map((item, i) => (
-                <div
-                  key={item.year}
-                  className={`relative flex flex-col md:flex-row gap-4 md:gap-0 ${
-                    i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
-                  <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-                    <div className="bg-cream border border-divider rounded-xl p-5 hover:shadow-sm transition-shadow max-w-sm md:ml-auto md:mr-0">
-                      <span className="text-gold font-bold text-sm">{item.year}</span>
-                      <h4 className="font-semibold text-navy mt-1 mb-2 text-sm">{item.title}</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
-                    </div>
+                <div key={item.year} className="flex flex-col items-center relative">
+                  {i > 0 && <div className="absolute top-[7px] left-0 right-1/2 h-px bg-divider" />}
+                  {i < a.timeline.length - 1 && <div className="absolute top-[7px] left-1/2 right-0 h-px bg-divider" />}
+                  <div className="w-3.5 h-3.5 rounded-full bg-gold border-4 border-white shadow-sm mb-5 z-10" />
+                  <div className="bg-cream border border-divider rounded-xl p-4 w-full flex-1 hover:shadow-sm transition-shadow">
+                    <span className="text-gold font-bold text-xs">{item.year}</span>
+                    <h4 className="font-semibold text-navy mt-1 mb-2 text-sm">{item.title}</h4>
+                    <p className="text-gray-500 text-xs leading-relaxed">{item.description}</p>
                   </div>
-                  <div className="hidden md:flex absolute left-1/2 top-5 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-gold border-4 border-white shadow-sm" />
-                  <div className="md:w-1/2" />
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Mobile: vertical */}
+
+          <div className="md:hidden space-y-0">
+            {a.timeline.map((item, i) => (
+              <div key={item.year} className="flex gap-4">
+                <div className="flex flex-col items-center">
+                  <div className="w-3 h-3 rounded-full bg-gold border-2 border-white shadow-sm mt-1.5 flex-shrink-0" />
+                  {i < a.timeline.length - 1 && <div className="w-px flex-1 bg-divider mt-1" />}
+                </div>
+                <div className="bg-cream border border-divider rounded-xl p-4 flex-1 mb-4">
+                  <span className="text-gold font-bold text-xs">{item.year}</span>
+                  <h4 className="font-semibold text-navy mt-1 mb-2 text-sm">{item.title}</h4>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
