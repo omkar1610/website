@@ -39,10 +39,15 @@ function formatPubDate(raw: string): string {
 }
 
 function stripSourceSuffix(title: string, source: string): string {
-  if (!source) return title
-  return title
-    .replace(new RegExp(`\\s+-\\s+${source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`), '')
-    .trim()
+  // Try exact source match first
+  if (source) {
+    const exact = title
+      .replace(new RegExp(`\\s+-\\s+${source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`), '')
+      .trim()
+    if (exact !== title) return exact
+  }
+  // Fallback: Google News always appends " - Source Name" — strip the last such segment
+  return title.replace(/\s+-\s+[^-]+$/, '').trim()
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -69,7 +74,9 @@ export default function NewsMedia() {
 
       const translated: FeedItem[] = await Promise.all(
         items.map(async (item) => {
-          const source = item.author ?? ''
+          // rss2json's author is often empty for Google News; extract source from title suffix
+          const extracted = item.title.match(/\s+-\s+([^-]+)$/)
+          const source = (item.author?.trim() || extracted?.[1]?.trim()) ?? ''
           const title = stripSourceSuffix(item.title, source)
           const date = formatPubDate(item.pubDate)
           const [titleOr, sourceOr, dateOr] = await Promise.all([
