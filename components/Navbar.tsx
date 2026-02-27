@@ -19,6 +19,17 @@ export default function Navbar() {
     const sectionIds = ['about', 'constituency', 'news', 'gallery', 'contact']
     const observers: IntersectionObserver[] = []
 
+    // Clear highlight when hero is in view
+    const heroEl = document.getElementById('top')
+    if (heroEl) {
+      const heroObserver = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection('') },
+        { rootMargin: '0px 0px -50% 0px' }
+      )
+      heroObserver.observe(heroEl)
+      observers.push(heroObserver)
+    }
+
     sectionIds.forEach((id) => {
       const el = document.getElementById(id)
       if (!el) return
