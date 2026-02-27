@@ -280,7 +280,7 @@ export default function NewsMedia() {
               </div>
 
               {/* Social tiles — bottom 20% */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1">
+              <div className="grid grid-cols-3 gap-4 flex-1">
                 <a
                   href="https://twitter.com/suryabanshibjp"
                   target="_blank"
