@@ -9,7 +9,7 @@ import { useLanguage } from '@/context/LanguageContext'
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 type BiLang = { en: string; or: string }
-type FeedItem = { title: BiLang; source: BiLang; date: BiLang; link: string }
+type FeedItem = { title: BiLang; source: BiLang; date: BiLang; link: string; tag: BiLang }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -50,6 +50,22 @@ function stripSourceSuffix(title: string, source: string): string {
   return title.replace(/\s+-\s+[^-]+$/, '').trim()
 }
 
+const TAG_RULES: { keywords: string[]; tag: BiLang }[] = [
+  { keywords: ['university', 'college', 'higher education', 'shailabala', 'utkal'], tag: { en: 'Higher Education', or: 'ଉଚ୍ଚ ଶିକ୍ଷା' } },
+  { keywords: ['student', 'scholarship', 'youth', 'welfare'],                       tag: { en: 'Student Welfare',   or: 'ଛାତ୍ର ସୁରକ୍ଷା' } },
+  { keywords: ['sports', 'cricket', 'football', 'game', 'tournament', 'athlete'],   tag: { en: 'Sports',             or: 'କ୍ରୀଡ଼ା' } },
+  { keywords: ['literature', 'science', 'research', 'book', 'award', 'prize'],      tag: { en: 'Literature & Science', or: 'ସାହିତ୍ୟ ଓ ବିଜ୍ଞାନ' } },
+  { keywords: ['policy', 'government', 'minister', 'governance', 'education'],      tag: { en: 'Education & Governance', or: 'ଶିକ୍ଷା' } },
+  { keywords: ['bjp', 'party', 'election', 'rally', 'campaign', 'leadership'],      tag: { en: 'Leadership & Vision', or: 'ନେତୃତ୍ୱ ଓ ଭିଜନ' } },
+]
+
+const DEFAULT_TAG: BiLang = { en: 'News', or: 'ଖବର' }
+
+function detectTag(title: string): BiLang {
+  const lower = title.toLowerCase()
+  return TAG_RULES.find(r => r.keywords.some(kw => lower.includes(kw)))?.tag ?? DEFAULT_TAG
+}
+
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function NewsMedia() {
@@ -79,6 +95,7 @@ export default function NewsMedia() {
           const source = (item.author?.trim() || extracted?.[1]?.trim()) ?? ''
           const title = stripSourceSuffix(item.title, source)
           const date = formatPubDate(item.pubDate)
+          const tag = detectTag(title)
           const [titleOr, sourceOr, dateOr] = await Promise.all([
             toOdia(title),
             toOdia(source),
@@ -89,6 +106,7 @@ export default function NewsMedia() {
             source: { en: source, or: sourceOr },
             date:   { en: date,   or: dateOr   },
             link: item.link,
+            tag,
           }
         })
       )
@@ -112,6 +130,8 @@ export default function NewsMedia() {
         <div className="w-1 self-stretch rounded-full bg-gold flex-shrink-0" />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1 flex-wrap">
+            <span className="text-xs font-semibold text-gold uppercase tracking-wider">{item.tag[lang]}</span>
+            <span className="text-gray-300 text-xs">·</span>
             <span className="text-xs text-gray-500">{item.source[lang]}</span>
             <span className="text-gray-300 text-xs">·</span>
             <span className="text-xs text-gray-400">{item.date[lang]}</span>
