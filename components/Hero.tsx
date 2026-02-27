@@ -35,7 +35,7 @@ export default function Hero() {
       return
     }
 
-    const speed = isDeleting ? 1 : 3
+    const speed = isDeleting ? 1 : 20
     const timeout = setTimeout(() => {
       setDisplayText(
         isDeleting
