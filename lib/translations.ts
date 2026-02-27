@@ -208,9 +208,10 @@ const content = {
     instagramDesc:   { en: 'Updates from constituency visits, youth events, and cultural programs.', or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ ସନ୍ଦର୍ଶନ, ଯୁବ କାର୍ଯ୍ୟକ୍ରମ ଓ ସାଂସ୍କୃତିକ ଆୟୋଜନର ଛବି ଓ ଅଦ୍ୟତନ।' },
     instagramBtn:    { en: 'View on Instagram',    or: 'ଇନ୍ଷ୍ଟାଗ୍ରାମରେ ଦେଖନ୍ତୁ' },
     youtubeDesc:     { en: 'Speeches, inaugurations, and development updates from Dhamnagar.', or: 'ଭାଷଣ, ଉଦ୍ଘାଟନ ଓ ଉନ୍ନୟନ କାର୍ଯ୍ୟକ୍ରମର ଭିଡିଓ ଅଦ୍ୟତନ।' },
-    youtubeBtn:      { en: 'Watch on YouTube',     or: 'ୟୁଟ୍ୟୁବ୍ରେ ଦେଖନ୍ତୁ' },
-    pressTitle:      { en: 'Press Coverage',       or: 'ପ୍ରେସ୍ କଭରେଜ୍' },
-    pressNote:       { en: '',                     or: '' },
+    youtubeBtn:      { en: 'Watch on YouTube',     or: 'ୟୁଟ୍ୟୁବ୍ ରେ ଦେଖନ୍ତୁ' },
+    pressTitle:          { en: 'Press Coverage',       or: 'ପ୍ରେସ୍ କଭରେଜ୍' },
+    pressHighlightTitle: { en: 'Press Highlights',    or: 'ଉଲ୍ଲେଖଯୋଗ୍ୟ ଖବର' },
+    pressNote:           { en: '',                    or: '' },
     newsItems: [
       {
         source: 'Sambad English (Feb 2026)', // published 22 Feb 2026 :contentReference[oaicite:0]{index=0}
@@ -258,6 +259,11 @@ const content = {
     socialTitle: { en: 'Social Media', or: 'ସୋସିଆଲ ମିଡ଼ିଆ' },
   },
 
+  news_feed: {
+    sectionTitle: { en: 'Latest News',    or: 'ସର୍ବଶେଷ ଖବର' },
+    refreshBtn:   { en: 'Refresh',        or: 'ରିଫ୍ରେଶ' },
+    loadingText:  { en: 'Loading…',  or: 'ଲୋଡ଼ ହେଉଛି…' },
+  },
   gallery: {
     sectionTitle:    { en: 'Gallery',                                                                  or: 'ଗ୍ୟାଲେରୀ' },
     sectionSubtitle: { en: 'Moments from public service, governance milestones, and community engagement.', or: 'ଜନସେବା, ଶାସନୀୟ ମାଇଲସ୍ଟୋନ୍ ଓ ସମୁଦାୟ ସହଭାଗିତାର ମୁହୂର୍ତ୍ତଗୁଡ଼ିକ।' },
