@@ -40,6 +40,64 @@ const content = {
       en: 'Empowering youth, preserving heritage, and building a future-ready Odisha through transparent and accountable governance.',
       or: 'ଯୁବ ସଶକ୍ତିକରଣ, ଐତିହ୍ୟ ସୁରକ୍ଷା ଓ ଆଧୁନିକ ଓଡ଼ିଶା ଗଢ଼ିବା ପାଇଁ ପାରଦର୍ଶୀ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ପ୍ରତି ପ୍ରତିବଦ୍ଧ।',
     },
+    // quotes: [
+    //   {
+    //     en: 'Empowering youth. Preserving heritage. Building Odisha.',
+    //     or: 'ଯୁବ ସଶକ୍ତିକରଣ। ଐତିହ୍ୟ ସୁରକ୍ଷା। ଓଡ଼ିଶା ଗଢ଼ା।',
+    //   },
+    //   {
+    //     en: 'Education for a developed, self-reliant Odisha.',
+    //     or: 'ଉନ୍ନତ ଓ ସ୍ୱାବଳମ୍ବୀ ଓଡ଼ିଶା ପାଇଁ ଶିକ୍ଷା।',
+    //   },
+    //   {
+    //     en: 'Odia identity is our pride.',
+    //     or: 'ଓଡ଼ିଆ ଅସ୍ମିତା ଆମର ଗୌରବ।',
+    //   },
+    //   {
+    //     en: 'From playground to podium—Odisha leads.',
+    //     or: 'ଖେଳମାଠରୁ ପୁରସ୍କାର ମଞ୍ଚ—ଓଡ଼ିଶା ଅଗ୍ରଣୀ।',
+    //   },
+    //   {
+    //     en: 'Transparency defines our governance.',
+    //     or: 'ପାରଦର୍ଶିତା ଆମ ଶାସନର ପରିଚୟ।',
+    //   },
+    //   {
+    //     en: 'Tradition and innovation build a New Odisha.',
+    //     or: 'ପାରମ୍ପରିକତା ଓ ନବୋନ୍ମେଷରେ ନୂତନ ଓଡ଼ିଶା।',
+    //   },
+    // ],
+
+    quotes: [
+      {
+        en: 'Empowering youth, preserving heritage, and building a future-ready Odisha through transparent and accountable governance.',
+        or: 'ଯୁବ ସଶକ୍ତିକରଣ, ଐତିହ୍ୟ ସୁରକ୍ଷା ଓ ଆଧୁନିକ ଓଡ଼ିଶା ଗଢ଼ିବା ପାଇଁ ପାରଦର୍ଶୀ ଓ ଦାୟିତ୍ୱଶୀଳ ଶାସନ ପ୍ରତି ପ୍ରତିବଦ୍ଧତା।',
+      },
+      {
+        en: 'Education is the cornerstone of a developed Odisha. We are committed to building a knowledge-driven state where academic excellence meets employability, paving the way for a "Viksit Odisha 2036" and a self-reliant India.',
+        or: 'ଶିକ୍ଷା ହେଉଛି ଉନ୍ନତ ଓଡ଼ିଶାର ଭିତ୍ତିସ୍ଥମ୍ଭ। ଆମେ ଜ୍ଞାନମୂଳକ ରାଜ୍ୟ ଗଢ଼ିବାକୁ ପ୍ରତିବଦ୍ଧ, ଯେଉଁଠାରେ ଶିକ୍ଷାର କୃତିତ୍ୱ ଓ ରୋଜଗାର ସୁଯୋଗ ସହିତ ମିଶି "ବିକସିତ ଓଡ଼ିଶା 2036" ଓ ସ୍ୱାବଳମ୍ବୀ ଭାରତ ପାଇଁ ପଥ ପ୍ରସ୍ତୁତ କରେ।',
+      },
+
+      {
+        en: 'Odia Asmita is not just our heritage; it is our identity and our pride. Our mission is to take the glory of the Odia language and culture from the grassroots to the global stage, ensuring our traditions thrive alongside modern progress.',
+        or: 'ଓଡ଼ିଆ ଅସ୍ମିତା କେବଳ ଆମର ଐତିହ୍ୟ ନୁହେଁ; ଏହା ଆମର ପରିଚୟ ଓ ଗୌରବ। ଆମର ଲକ୍ଷ୍ୟ ହେଉଛି ଓଡ଼ିଆ ଭାଷା ଓ ସଂସ୍କୃତିର ଗୌରବକୁ ମୂଳସ୍ତରରୁ ବିଶ୍ୱମଞ୍ଚ ପର୍ଯ୍ୟନ୍ତ ପହଞ୍ଚାଇବା, ଯାହାଦ୍ୱାରା ଆମ ପାରମ୍ପରିକତା ଆଧୁନିକ ଉନ୍ନତି ସହ ସମୃଦ୍ଧି ପାଉ।',
+      },
+
+      {
+        en: 'From the playground to the podium, we are channeling the boundless energy of our youth. By fostering a culture of sportsmanship and excellence, we are establishing Odisha as the true sports capital of India.',
+        or: 'ଖେଳମାଠରୁ ପୁରସ୍କାର ମଞ୍ଚ ପର୍ଯ୍ୟନ୍ତ, ଆମେ ଯୁବଶକ୍ତିର ଅସୀମ ଉର୍ଜାକୁ ସଠିକ ଦିଗରେ ପରିଚାଳିତ କରୁଛୁ। କ୍ରୀଡ଼ାସ୍ପୃହା ଓ କୃତିତ୍ୱର ସଂସ୍କୃତିକୁ ପ୍ରୋତ୍ସାହନ ଦେଇ, ଓଡ଼ିଶାକୁ ଭାରତର ସତ୍ୟ କ୍ରୀଡ଼ା ରାଜଧାନୀ ଭାବେ ସ୍ଥାପିତ କରୁଛୁ।',
+      },
+
+      {
+        en: 'Transparency is the soul of good governance. We believe in a democracy defined by open debate, accountability, and a relentless dedication to serving the last person in the queue with dignity and respect.',
+        or: 'ପାରଦର୍ଶିତା ହେଉଛି ସୁଶାସନର ଆତ୍ମା। ଖୋଲା ଆଲୋଚନା, ଦାୟିତ୍ୱବୋଧ ଓ ଶେଷ ଲୋକ ପର୍ଯ୍ୟନ୍ତ ମର୍ଯ୍ୟାଦା ସହିତ ସେବା ପ୍ରଦାନର ଅଟୁଟ ପ୍ରତିବଦ୍ଧତାରେ ଆମର ଗଣତନ୍ତ୍ର ଉପରେ ଆସ୍ଥା ରହିଛି।',
+      },
+
+      {
+        en: 'Bridging tradition with innovation to build a New Odisha—where our youth lead with confidence, our culture stands tall with pride, and our governance serves as a model of trust and transformation.',
+        or: 'ପାରମ୍ପରିକତା ଓ ନବୋନ୍ମେଷକୁ ସେତୁବନ୍ଧ କରି ନୂତନ ଓଡ଼ିଶା ଗଢ଼ାଯାଉଛି—ଯେଉଁଠାରେ ଯୁବମାନେ ଆତ୍ମବିଶ୍ୱାସରେ ନେତୃତ୍ୱ ଦିଅନ୍ତି, ସଂସ୍କୃତି ଗୌରବରେ ଉଦ୍ଭାସିତ ହୁଏ, ଓ ଶାସନ ବିଶ୍ୱାସ ଓ ପରିବର୍ତ୍ତନର ଆଦର୍ଶ ହୁଏ।',
+      },
+
+    ],
     ctaAbout:        { en: 'About Me', or: 'ମୋ ବିଷୟରେ' },
     ctaConstituency: { en: 'Constituency Work', or: 'ନିର୍ବାଚନ ମଣ୍ଡଳୀ କାର୍ଯ୍ୟ' },
   },
