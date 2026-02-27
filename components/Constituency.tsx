@@ -1,6 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/context/LanguageContext'
+import ScrollReveal from '@/components/ScrollReveal'
 
 // Icons stay here - only text comes from translations
 const initiativeIcons = [
@@ -33,54 +34,57 @@ export default function Constituency() {
     <section id="constituency" className="py-20 bg-cream">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-16">
+        <ScrollReveal className="mb-16">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy mb-2">
             {c.sectionTitle}
           </h2>
           <div className="w-16 h-1 bg-gold mb-4" />
           <p className="text-gray-500 text-lg max-w-2xl">{c.sectionSubtitle}</p>
-        </div>
+        </ScrollReveal>
 
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-          {c.stats.map((stat) => (
-            <div key={stat.label} className="bg-navy text-white rounded-xl p-6 text-center">
-              <div className="font-serif text-3xl font-bold text-gold mb-1">{stat.number}</div>
-              <div className="text-white/60 text-sm">{stat.label}</div>
-            </div>
+          {c.stats.map((stat, i) => (
+            <ScrollReveal key={stat.label} delay={i * 80}>
+              <div className="bg-navy text-white rounded-xl p-6 text-center">
+                <div className="font-serif text-3xl font-bold text-gold mb-1">{stat.number}</div>
+                <div className="text-white/60 text-sm">{stat.label}</div>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Initiatives Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {c.initiatives.map((item, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-xl p-6 border border-divider hover:shadow-md hover:border-gold/30 transition-all group"
-            >
-              <div className="w-10 h-10 bg-navy/10 text-navy rounded-lg flex items-center justify-center mb-4 group-hover:bg-gold/10 group-hover:text-gold transition-colors">
-                {initiativeIcons[i]}
+            <ScrollReveal key={i} delay={i * 80}>
+              <div className="bg-white rounded-xl p-6 border border-divider hover:shadow-md hover:border-gold/30 transition-all group">
+                <div className="w-10 h-10 bg-navy/10 text-navy rounded-lg flex items-center justify-center mb-4 group-hover:bg-gold/10 group-hover:text-gold transition-colors">
+                  {initiativeIcons[i]}
+                </div>
+                <span className="text-xs font-semibold text-gold uppercase tracking-wider">
+                  {item.tag}
+                </span>
+                <h3 className="font-semibold text-navy mt-1 mb-2">{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
               </div>
-              <span className="text-xs font-semibold text-gold uppercase tracking-wider">
-                {item.tag}
-              </span>
-              <h3 className="font-semibold text-navy mt-1 mb-2">{item.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* CTA Banner */}
-        <div className="bg-navy rounded-2xl p-8 md:p-12 text-center text-white">
-          <h3 className="font-serif text-2xl md:text-3xl font-bold mb-3">{c.ctaTitle}</h3>
-          <p className="text-white/60 max-w-xl mx-auto mb-6 text-sm leading-relaxed">{c.ctaDesc}</p>
-          <a
-            href="#contact"
-            className="inline-block bg-gold hover:bg-gold-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
-          >
-            {c.ctaButton}
-          </a>
-        </div>
+        <ScrollReveal>
+          <div className="bg-navy rounded-2xl p-8 md:p-12 text-center text-white">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold mb-3">{c.ctaTitle}</h3>
+            <p className="text-white/60 max-w-xl mx-auto mb-6 text-sm leading-relaxed">{c.ctaDesc}</p>
+            <a
+              href="#contact"
+              className="inline-block bg-gold hover:bg-gold-dark text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+            >
+              {c.ctaButton}
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )

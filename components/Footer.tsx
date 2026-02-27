@@ -1,6 +1,7 @@
 'use client'
 
 import { useLanguage } from '@/context/LanguageContext'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const socialLinks = [
   {
@@ -51,7 +52,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand column */}
-          <div className="md:col-span-2">
+          <ScrollReveal direction="left" className="md:col-span-2">
             <h3 className="font-serif text-2xl font-bold mb-1">{f.brandName}</h3>
             <p className="text-gold text-sm mb-4">{f.brandSubtitle}</p>
             <p className="text-white/50 text-sm leading-relaxed mb-6 max-w-xs">{f.brandDesc}</p>
@@ -69,10 +70,10 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Quick Links */}
-          <div>
+          <ScrollReveal delay={100}>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">
               {f.quickLinksTitle}
             </h4>
@@ -89,10 +90,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
 
           {/* Official Resources */}
-          <div>
+          <ScrollReveal delay={200}>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-white/40 mb-4">
               {f.officialLinksTitle}
             </h4>
@@ -111,7 +112,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* Footer Bottom. Text = © {currentYear} {f.brandName}. {f.allRightsReserved} */}
