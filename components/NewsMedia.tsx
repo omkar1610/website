@@ -81,15 +81,15 @@ export default function NewsMedia() {
     setLoading(true)
     try {
       const res = await fetch(
-        `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}&count=10`
+        `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`
       )
       const data = await res.json()
       if (data.status !== 'ok') throw new Error('feed error')
 
       const items: { title: string; author: string; pubDate: string; link: string }[] =
-        data.items.slice(0, 10)
+        data.items
 
-      const translated: FeedItem[] = await Promise.all(
+      const translated: (FeedItem & { _ts: number })[] = await Promise.all(
         items.map(async (item) => {
           // rss2json's author is often empty for Google News; extract source from title suffix
           const extracted = item.title.match(/\s+-\s+([^-]+)$/)
@@ -108,9 +108,11 @@ export default function NewsMedia() {
             date:   { en: date,   or: dateOr   },
             link: item.link,
             tag,
+            _ts: new Date(item.pubDate.replace(' ', 'T')).getTime() || 0,
           }
         })
       )
+      translated.sort((a, b) => b._ts - a._ts)
       setFeedItems(translated)
     } catch {
       setFeedItems([])

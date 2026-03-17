@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 
 export default function Hero() {
@@ -11,6 +11,26 @@ export default function Hero() {
   const [quoteIndex, setQuoteIndex] = useState(0)
   const [displayText, setDisplayText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
+  const [quoteMinHeight, setQuoteMinHeight] = useState(0)
+  const measureRef = useRef<HTMLDivElement>(null)
+
+  // Measure the tallest quote to prevent layout shift
+  const measureQuotes = useCallback(() => {
+    if (!measureRef.current) return
+    const children = measureRef.current.children
+    let max = 0
+    for (let i = 0; i < children.length; i++) {
+      max = Math.max(max, (children[i] as HTMLElement).offsetHeight)
+    }
+    if (max > 0) setQuoteMinHeight(max)
+  }, [])
+
+  useEffect(() => {
+    measureQuotes()
+    const observer = new ResizeObserver(measureQuotes)
+    if (measureRef.current) observer.observe(measureRef.current)
+    return () => observer.disconnect()
+  }, [measureQuotes, lang])
 
   // Reset typewriter when language changes
   useEffect(() => {
@@ -62,7 +82,7 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="text-white order-2 lg:order-1">
+          <div className="text-white order-2 lg:order-1 relative">
             <div className="mb-5">
               <span className="inline-block bg-gold/20 text-gold border border-gold/30 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-widest">
                 {h.badge}
@@ -77,7 +97,17 @@ export default function Hero() {
               <p className="text-white/90 text-lg font-medium">{h.role}</p>
               <p className="text-white/60 text-base">{h.ministry}</p>
             </div>
-            <blockquote className="border-l-4 border-gold pl-4 mb-8 min-h-[5rem]">
+            {/* Hidden measurement container for all quotes */}
+            <div ref={measureRef} aria-hidden className="absolute invisible pointer-events-none" style={{ width: 'inherit' }}>
+              {h.quotes.map((q, i) => (
+                <blockquote key={i} className="border-l-4 border-gold pl-4">
+                  <p className="text-white/75 text-base italic leading-relaxed">
+                    &ldquo;{q}&rdquo;
+                  </p>
+                </blockquote>
+              ))}
+            </div>
+            <blockquote className="border-l-4 border-gold pl-4 mb-8" style={{ minHeight: quoteMinHeight || undefined }}>
               <p className="text-white/75 text-base italic leading-relaxed">
                 &ldquo;{displayText}
                 <span className="inline-block w-0.5 h-4 bg-gold/80 ml-0.5 align-middle animate-pulse" />
